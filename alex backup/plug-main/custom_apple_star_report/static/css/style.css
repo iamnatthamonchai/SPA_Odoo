@@ -1,0 +1,18 @@
+html * {
+  font-family: Sarabun !important;
+  font-size: 14px !important;
+}
+.title-bold {
+  font-weight: bold;
+}
+.stamp_square {
+  height: 90px;
+  width: 90px;
+  outline: 1px dashed #7c7878;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+.text-center {
+  text-align: center;
+}

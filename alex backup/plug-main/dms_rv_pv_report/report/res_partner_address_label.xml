@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="report_partner_address_label_big">
+        <t t-call="web.basic_layout">
+            <t t-set="company_id" t-value="res_company" />
+                <t t-foreach="docs" t-as="d">
+                    <br/>
+                    <div style="margin:5%;font-family:Sarabun;">
+                        <h1><strong>ชื่อและที่อยู่ผู้ส่ง</strong></h1>
+                        <h2>
+                            <span t-field="company_id.name"></span><br/>
+                            <span t-field="company_id.street"></span><span t-field="company_id.street2"/><br/>
+                            <span t-field="company_id.city"/> <span t-field="company_id.state_id.name"/> <span t-esc="company_id.country_id.name"/><br/>
+                            <span t-field="company_id.zip"/><br/>
+                        </h2>
+
+                    </div>
+                    <div style="margin-left:50%;margin-top:20%;font-family:Sarabun;bottom: 10px;">
+                        <h1><strong>ชื่อและที่อยู่ผู้รับ</strong></h1>
+                        <h2>
+                            <span t-field="d.name"></span><br/>
+                            <span t-field="d.street"></span><span t-field="d.street2"/><br/>
+                            <span t-field="d.city"/> <span t-field="d.state_id.name"/> <span t-esc="d.country_id.name"/><br/>
+                            <span t-field="d.zip"/><br/>
+                        </h2>
+
+                    </div>
+                </t>
+        </t>
+    </template>
+    <template id="report_partner_address_label_small">
+        <t t-call="web.basic_layout">
+            <t t-set="company_id" t-value="res_company" />
+                <t t-foreach="docs" t-as="d">
+                    <br/>
+                    <div style="margin:5%;font-family:Sarabun;">
+                        <h3><strong>ชื่อและที่อยู่ผู้ส่ง</strong></h3>
+                        <h3>
+                            <span t-field="company_id.name"></span><br/>
+                            <span t-field="company_id.street"></span><span t-field="company_id.street2"/><br/>
+                            <span t-field="company_id.city"/> <span t-field="company_id.state_id.name"/> <span t-esc="company_id.country_id.name"/><br/>
+                            <strong><span t-field="company_id.zip"/></strong><br/>
+                        </h3>
+
+                    </div>
+                    <div style="margin-left:50%;margin-top:15%;font-family:Sarabun;bottom: 10px;">
+                        <h3><strong>ชื่อและที่อยู่ผู้รับ</strong></h3>
+                        <h3>
+                            <span t-field="d.name"></span><br/>
+                            <span t-field="d.street"></span><span t-field="d.street2"/><br/>
+                            <span t-field="d.city"/> <span t-field="d.state_id.name"/> <span t-esc="d.country_id.name"/><br/>
+                            <strong><span t-field="d.zip"/></strong><br/>
+                        </h3>
+
+                    </div>
+                </t>
+        </t>
+    </template>
+    <report
+        id="action_res_partner_address_label_big"
+        string="ใบปะหน้า A4"
+        model="res.partner"
+        name="dms_address_label.report_partner_address_label_big"
+        file="dms_address_label.report_partner_address_label_big"
+        report_type="qweb-pdf"
+        paperformat="dms_address_label.paper_address_label_a4"
+    />
+        <report
+        id="action_res_partner_address_label_small"
+        string="ใบปะหน้า A5 หรือซองจดหมาย"
+        model="res.partner"
+        name="dms_address_label.report_partner_address_label_small"
+        file="dms_address_label.report_partner_address_label_small"
+        report_type="qweb-pdf"
+        paperformat="dms_rv_pv_report.paper_rv_pv_a5"
+    />
+    </data>
+
+</odoo>

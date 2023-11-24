@@ -1,0 +1,25 @@
+<odoo>
+  <record id="quotation_apple_star_report" model="ir.actions.report">
+    <field name="name">Quotaton/SaleOrder</field>
+    <field name="model">sale.order</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="paperformat_id" ref="custom_apple_star_report.paper_format_A4_zero_margin"/>
+    <field name="report_name">custom_apple_star_report.custom_report_saleorder_apple_star</field>
+    <field name="report_file">custom_apple_star_report.custom_report_saleorder_apple_star</field>
+    <field name="binding_model_id" ref="sale.model_sale_order"/>
+    <field name="binding_type">report</field>
+  
+  </record>
+  <record id="invoice_apple_star_report" model="ir.actions.report">
+    <field name="name">Invoice</field>
+    <field name="model">account.move</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="paperformat_id" ref="custom_apple_star_report.paper_format_letter_zero_margin"/>
+    <field name="report_name">custom_apple_star_report.custom_report_invoice_apple_star</field>
+    <field name="report_file">custom_apple_star_report.custom_report_invoice_apple_star</field>
+    <field name="binding_model_id" ref="sale.model_sale_order"/>
+    <field name="binding_type">report</field>
+  
+  </record>
+
+</odoo>

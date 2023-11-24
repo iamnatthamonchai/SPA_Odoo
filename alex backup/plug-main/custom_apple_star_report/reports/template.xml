@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="blank_layout">
+        <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+        </div>
+
+        <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout {{  'o_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+           
+            <div style="height:320px;">
+              
+            </div>
+            <t t-out="0"/>
+        </div>
+
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            
+        </div>
+    </template>
+    <template id="layout_with_background">
+    <div t-attf-style="background-image:url('/custom_apple_star_report/static/images/Invoice_Form.png'); background-size:300mm 424mm; width:300mm; height:424mm;"
+        >
+        <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+        </div>
+
+        <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout {{  'o_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+           
+            <div style="height:320px;">
+              
+            </div>
+            <t t-out="0"/>
+        </div>
+
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            
+        </div>
+    </div>
+    </template>
+</odoo>
+
+
+    

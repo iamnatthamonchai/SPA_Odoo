@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Custom Layout-->
+    <template id="ez_print_saleorder.header_part">
+        <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+            <div class="row">
+                <div class="col-3 my-4 pl-4">
+                    <!-- <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 120px;" alt="Logo"/> -->
+                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/>
+                </div>
+                <div class="col-6 mb4" style="vertical-align: middle;">
+                    <div style="width:470px; word-wrap: break-word;">
+                        <font style="font-size: 22px;">
+                                <b><span t-field="o.company_id.name"/></b>&amp;nbsp;</font>
+								<font style="font-size: 20px;">
+                                <t t-if="o.company_id.branch == '00000'">
+                                    <span>(สำนักงานใหญ่)</span>
+                                </t>
+                                <t t-if="o.company_id.branch != '00000'">
+                                    (<span t-field="o.company_id.branch"/>)
+                                </t>
+                                </font>
+                            <br/>
+                            <!--mj<span t-if="o.company_id.building"><span t-field="o.company_id.building"/>&amp;nbsp;</span>
+                            <span t-if="o.company_id.roomnumber">ห้องที่&amp;nbsp;<span t-field="o.company_id.roomnumber"/>&amp;nbsp;</span>
+                            <span t-if="o.company_id.floornumber">ชั้นที่&amp;nbsp;<span t-field="o.company_id.floornumber"/>&amp;nbsp;</span>
+                            <span t-if="o.company_id.village">หมู่บ้าน&amp;nbsp;<span t-field="o.company_id.village"/>&amp;nbsp;</span>
+                            <span t-if="o.company_id.house_number"><span t-field="o.company_id.house_number"/>&amp;nbsp;</span>
+                            <span t-if="o.company_id.moo_number">หมู่&amp;nbsp;<span t-field="o.company_id.moo_number"/>&amp;nbsp;</span>
+                            <span t-if="o.company_id.soi_number">ซอย&amp;nbsp;<span t-field="o.company_id.soi_number"/>&amp;nbsp;</span>mj-->
+							<font style="font-size: 20px;">
+                            <span t-if="o.company_id.street">
+                                <span t-esc="o.company_id.street"/>&amp;nbsp;
+                            </span>
+                            <span t-if="o.company_id.street2">
+                                <span t-esc="o.company_id.street2"/>&amp;nbsp;
+                            </span>
+                            <span t-if="o.company_id.city and o.company_id.state_id and o.company_id.state_id.code == 'BKK'">เขต
+                                <span t-field="o.company_id.city"/>&amp;nbsp;
+                            </span>
+                            <span t-if="o.company_id.city and o.company_id.state_id and o.company_id.state_id.code != 'BKK'">
+                                <span t-field="o.company_id.city"/>&amp;nbsp;
+                            </span>
+                            <span t-if="o.company_id.state_id and o.company_id.state_id.code == 'BKK'">&amp;nbsp;
+                                <span t-field="o.company_id.state_id.name"/>&amp;nbsp;
+                            </span>
+                            <span t-if="o.company_id.state_id and o.company_id.state_id.code != 'BKK'">&amp;nbsp;
+                                <span t-field="o.company_id.state_id.name"/>&amp;nbsp;
+                            </span>
+                            <span t-if="o.company_id.zip">
+                                <span t-esc="o.company_id.zip"/>&amp;nbsp;
+                            </span><br/>
+                            <span t-if="o.company_id.phone">โทรศัพท์&amp;nbsp;
+                                <span t-esc="o.company_id.phone"/>&amp;nbsp;
+                            </span>
+                            <br/>
+                            <span t-if="o.company_id.email">อีเมลล์&amp;nbsp;
+                                <span t-esc="o.company_id.email"/>&amp;nbsp;
+                            </span>
+                            <br/>
+                            <span t-if="o.company_id.vat">เลขประจำตัวผู้เสียภาษีอากร&amp;nbsp;
+                                <span t-esc="o.company_id.vat"/>&amp;nbsp;
+                            </span>
+                            <!--                                                        <span t-if="o.company_id.eng_address"><span t-esc="o.company_id.eng_address"/></span><br/>-->
+                            <!--                                                <t t-if="o.operating_unit_id and o.operating_unit_id.partner_id">-->
+                            <!--                                                    <span>สาขา:</span>-->
+                            <!--                                                    <t t-if="o.operating_unit_id.partner_id.street"><span t-field="o.operating_unit_id.partner_id.street"/></t>-->
+                            <!--                                                    <t t-if="o.operating_unit_id.partner_id.street2"><span t-field="o.operating_unit_id.partner_id.street2"/>&amp;nbsp;</t>-->
+                            <!--                                                    <span t-if="o.operating_unit_id.partner_id.sub_district_id.name and o.operating_unit_id.partner_id.state_id.code == 'BKK'">แขวง<span t-field="o.operating_unit_id.partner_id.sub_district_id.name"/>&amp;nbsp;</span>-->
+                            <!--                                                    <span t-if="o.operating_unit_id.partner_id.sub_district_id.name and o.operating_unit_id.partner_id.state_id.code != 'BKK'">ต.<span t-field="o.operating_unit_id.partner_id.sub_district_id.name"/>&amp;nbsp;</span>-->
+                            <!--                                                    <span t-if="o.operating_unit_id.partner_id.district_id.name and o.operating_unit_id.partner_id.state_id.code == 'BKK'">เขต<span t-field="o.operating_unit_id.partner_id.district_id.name"/>&amp;nbsp;</span>-->
+                            <!--                                                    <span t-if="o.operating_unit_id.partner_id.district_id.name and o.operating_unit_id.partner_id.state_id.code != 'BKK'">อ.<span t-field="o.operating_unit_id.partner_id.district_id.name"/>&amp;nbsp;</span>-->
+                            <!--                                                    <span t-if="o.operating_unit_id.partner_id.state_id.name and o.operating_unit_id.partner_id.state_id.code == 'BKK'"><span t-field="o.operating_unit_id.partner_id.state_id.name"/>&amp;nbsp;</span>-->
+                            <!--                                                    <span t-if="o.operating_unit_id.partner_id.state_id.name and o.operating_unit_id.partner_id.state_id.code != 'BKK'">จ.<span t-field="o.operating_unit_id.partner_id.state_id.name"/>&amp;nbsp;</span>-->
+                            <!--                                                    <t t-if="o.operating_unit_id.partner_id.zip"><span t-esc="o.operating_unit_id.partner_id.zip"/>&amp;nbsp;</t>-->
+                            <!--                                                    <t t-if="o.operating_unit_id.partner_id.phone">โทร:&amp;nbsp;<span t-esc="o.operating_unit_id.partner_id.phone"/>&amp;nbsp;</t>-->
+                            <!--                                                    <t t-if="o.operating_unit_id.partner_id.mobile">มือถือ:&amp;nbsp;<span t-esc="o.operating_unit_id.partner_id.mobile"/>&amp;nbsp;</t>-->
+                            <!--                                                </t>-->
+                        </font>
+                    </div>
+                </div>
+                <div class="col-3 mb4 text-center">
+                    <font style="font-size: 14px;">
+                        <span>หน้า</span>
+                        <span class="page"/>/
+                        <span class="topage"/>
+                        <br/>
+                    </font>
+                    <font style="font-size: 18px;">
+                        <t t-if="o.state != 'sale'">
+                            <span>
+                                <B>ใบเสนอราคา</B>
+                            </span>
+                            <br/>
+                            <span>QUOTATION</span>
+                            <br/>
+                        </t>
+                        <t t-if="o.state == 'sale'">
+                            <span>ใบสั่งขาย</span>
+                            <br/>
+                            <span>ORDER</span>
+                            <br/>
+                        </t>
+                        <t>
+                            <font style="font-size: 16px;">
+                                <span> <B>เลขที่เอกสาร/No.</B></span>
+								<br/>
+                                <span t-field="o.name"/>
+                                <br/>
+                            </font>
+                        </t>
+                    </font>
+                </div>
+            </div>
+            <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                <div class="col-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="ml-3">
+                    <tr>
+                        <th colspan="8">
+                            <tr>
+                                <td width="20%" valign="middle" style="vertical-align: middle;">
+                                <span>
+                                <font style="font-size: 18px;">ลูกค้า</font>
+                                <font style="font-size: 16px;"> Customer's Name</font>
+                                </span>
+                                </td>
+                                <td width="54%" valign="middle" style="vertical-align: middle;">
+                                    <font style="font-size: 20px;">
+                                    <b><span t-field="o.partner_id.name"/></b>&amp;nbsp;
+                                </font>
+                                </td>
+                                <td width="26%" valign="middle" style="vertical-align: middle;">
+                                </td>
+                            </tr>
+                            <tr>
+                               <td valign="top" style="vertical-align: top;">
+                                </td>
+                                <td>	
+										<t t-if="o.partner_id.street"><span t-field="o.partner_id.street"/>&amp;nbsp;</t>
+                                        <t t-if="o.partner_id.street2"><span t-field="o.partner_id.street2"/>&amp;nbsp;</t>
+                                        <span t-if="o.partner_id.state_id.name and o.partner_id.state_id.code == 'BKK'">
+                                            <span t-field="o.partner_id.state_id.name"/>&amp;nbsp;
+                                        </span>
+                                        <span t-if="o.partner_id.state_id.name and o.partner_id.state_id.code != 'BKK'">
+                                            <span t-field="o.partner_id.state_id.name"/>&amp;nbsp;
+                                        </span>
+                                        <t t-if="o.partner_id.zip">
+                                            <span t-esc="o.partner_id.zip"/>&amp;nbsp;
+                                        </t>
+                                        <br/>
+                                        <t t-if="o.partner_id.phone">โทร:&amp;nbsp;
+                                            <span t-esc="o.partner_id.phone"/>&amp;nbsp;
+                                        </t>
+                                        <t t-if="o.partner_id.email">อีเมล:&amp;nbsp;
+                                            <span t-esc="o.partner_id.email"/>
+                                        </t>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%"><span>
+                                    <font style="font-size: 18px;">
+										รหัสลูกค้า
+                                        </font>
+                                        <font style="font-size: 16px;">
+                                            Customer's Code
+                                    </font>
+                                </span>
+                                </td>
+                                <td width="54%">
+                                    <font style="font-size: 18px;">
+                                       <span align="left" t-field="o.partner_id.ref"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                       <span>เลขประจำตัวผู้เสียภาษีอากร&amp;nbsp;:&amp;nbsp;</span>
+									   <span t-esc="o.partner_id.vat"/>
+                                    </font>
+                                </td>
+                                <td width="26%">
+                                    
+                                </td>
+                            </tr>
+                            
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                <div class="col-12">
+                    <div style="border-bottom: 1px solid grey;"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="mt-3"
+                        style="font-family:Sarabun; src:url(/ez_print_saleorder/static/THSarabun.ttf); font-size: 16px;">
+                    <thead>
+                        <tr>
+                            <th colspan="5">
+                                <td width="20%" style="text-align: center">
+                                    <font style="font-size: 18px;">
+                                        <span><B>เอกสารอ้างอิง</B><br/>REFERENCE</span><br/>
+                                        <t t-if="o.client_order_ref">
+                                            <span t-field="o.client_order_ref"/>
+                                        </t>
+                                        <t t-if="not o.client_order_ref">
+                                            <br/>
+                                        </t>
+                                    </font>
+                                </td>
+                                <td width="20%" style="text-align: center">
+                                    <font style="font-size: 18px;">
+                                        <span><B>วันที่</B><br/>DATE</span><br/>
+                                        <t t-if="o.date_order">
+                                            <span t-field="o.date_order" t-field-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                                        </t>
+                                        <t t-if="not o.date_order">
+                                            <br/>
+                                        </t>
+                                    </font>
+                                </td>
+                                <td width="20%" style="text-align: center">
+                                    <font style="font-size: 18px;">
+                                        <span><B>มีผลถึงวันที่</B><br/>VALID DATE</span><br/>
+                                        <t t-if="o.validity_date">
+                                            <span t-field="o.validity_date" t-field-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                                        </t>
+                                        <t t-if="not o.validity_date">
+                                            <br/>
+                                        </t>
+                                    </font>
+                                </td>
+                                <td width="20%" style="text-align: center">
+                                    <font style="font-size: 18px;">
+                                        <span><B>เงื่อนไขการชำระเงิน</B><br/>Term of Payment</span><br/>
+                                        <t t-if="o.payment_term_id.name">
+                                            <span t-field="o.payment_term_id.name"/>
+                                        </t>
+                                        <t t-if="not o.payment_term_id.name">
+                                            <br/>
+                                        </t>
+                                    </font>
+                                </td>
+                                <td width="20%" style="text-align: center">
+                                    <font style="font-size: 18px;">
+                                        <span><B>ผู้เสนอราคา</B><br/>SALES PERSON</span><br/>
+                                        <t t-if="o.create_uid.name">
+                                            <span t-field="o.create_uid.name"/>
+                                        </t>
+                                        <t t-if="not o.create_uid.name">
+                                            <br/>
+                                        </t>
+                                    </font>
+                                </td>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </template>
+
+    <template id="ez_print_saleorder.external_layout_standard">
+        <t t-call="ez_print_saleorder.header_part">
+            <t t-set="o" t-value="docs"/>
+        </t>
+
+        <div t-attf-class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+
+        <div class="footer o_standard_footer">
+            <div class="text-center">
+            </div>
+        </div>
+    </template>
+
+    <template id="ez_report_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-call="ez_print_saleorder.external_layout_standard">
+            <t t-raw="0"/>
+        </t>
+    </template>
+
+</odoo>

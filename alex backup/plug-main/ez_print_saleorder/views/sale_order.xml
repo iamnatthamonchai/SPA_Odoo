@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_sale_order_add_cuttax_form" model="ir.ui.view">
+        <field name="name">sale.order.add.cuttax</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="required_cuttax" widget="boolean_toggle"/>
+
+            </xpath>
+
+
+
+
+        </field>
+    </record>
+
+</odoo>

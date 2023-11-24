@@ -1,0 +1,176 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* invoice_tax_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-25 07:02+0000\n"
+"PO-Revision-Date: 2020-03-25 07:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid ""
+"<span style=\"font-size:25px;\">\n"
+"                                        <strong>\n"
+"                                            Tax Invoice/Delivery Order/Receipt\n"
+"                                        </strong> \n"
+"                                    </span>"
+msgstr "
+"<span style=\"font-size:25px;\">\n"
+"                                        <strong>\n"
+"                                            ใบกำกับภาษี/คำสั่งซื้อจัดส่ง/ใบเสร็จรับเงิน\n"
+"                                        </strong> \n"
+"                                    </span>"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Amount"
+msgstr "จำนวน"
+
+#. module: invoice_tax_report
+#: model:ir.model.fields,field_description:invoice_tax_report.field_account_move__num_word
+msgid "Amount In Words:"
+msgstr "จำนวนคำ:"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Authorized Signature"
+msgstr "ลายเซ็นผู้มีอำนาจ"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "By Cheque of bank"
+msgstr "โดยเช็คจากธนาคาร"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Cash"
+msgstr "เงินสด"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Chq. No."
+msgstr "เลขที่: Chq"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Collector"
+msgstr "นักสะสม"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Customer:"
+msgstr "ลูกค้า:"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Date"
+msgstr "วันที่"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Date:"
+msgstr "วันที่:"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Deliverer"
+msgstr "ช่วยให้พ้น"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Description"
+msgstr "ลักษณะ"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Due Date"
+msgstr "วันที่ครบกำหนด"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "GRAND TOTAL"
+msgstr "ผลรวมทั้งสิ้น"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "ITEM"
+msgstr "สิ่งของ"
+
+#. module: invoice_tax_report
+#: model:ir.actions.report,name:invoice_tax_report.new_account_invoice_tax_report
+msgid "Invoice Tax Report"
+msgstr "รายงานภาษีใบแจ้งหนี้"
+
+#. module: invoice_tax_report
+#: model:ir.model,name:invoice_tax_report.model_account_move
+msgid "Journal Entries"
+msgstr "การบันทึกรายวัน"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "No:"
+msgstr "ไม่:"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "P/O NO"
+msgstr "P / O ไม่"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Quantity"
+msgstr "ปริมาณ"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Receiver:"
+msgstr "ผู้รับ:"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Refer to"
+msgstr "เอ่ยถึง"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "SUBTOTAL"
+msgstr "ไม่ทั้งหมด"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Sales Order No."
+msgstr "เลขที่ใบสั่งขาย"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Salesmen"
+msgstr "พนักงานขาย"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Terms of payment"
+msgstr "เงื่อนไขการชำระเงิน"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Treasurer"
+msgstr "เหรัญญิก"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "Unit Price"
+msgstr "ราคาต่อหน่วย"
+
+#. module: invoice_tax_report
+#: model_terms:ir.ui.view,arch_db:invoice_tax_report.report_invoice_tax_document
+msgid "VALUE ADDED TAX"
+msgstr "ภาษีที่เพิ่มมูลค่า"

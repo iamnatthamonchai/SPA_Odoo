@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_tax_document_continue">
+        <div class="header">
+        </div>
+        <div class="footer">
+        </div>
+        <!-- <t t-call="web.external_layout"> -->
+            <div class="page">
+                <t t-foreach="doc" t-as="o">
+                    <!-- <table style="width:100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width:100%;text-align:center;font-family: 'Sarabun';">
+                                    <span style="font-size:25px;">
+                                        <strong>
+                                            Tax Invoice/Delivery Order/Receipt
+                                        </strong> 
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <table style="height: 100px; width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 65%;padding-left:5px;" rowspan="2">
+                                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span t-field="o.partner_id"/><br/>
+                                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span t-field="o.partner_id.street"/><br/>
+                                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span t-field="o.partner_id.city"/>, <span t-field="o.partner_id.state_id"/>, <span t-field="o.partner_id.country_id"/>
+                                </td>
+                                <td style="text-align:left;width: 10%;padding-left:5px;vertical-align:middle;"><!-- No: --></td>
+                                <td style="text-align:left;width: 25%;vertical-align:middle;padding-left:5px;"><span t-field='o.name' /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left;width: 10%;padding-left:5px;vertical-align:middle;"><!-- Date: --> 
+                                </td>
+                                <td style="text-align:left;width: 25%;vertical-align:middle;padding-left:5px;">
+                                    <span t-field="o.invoice_date"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <table style="height: 100px;" width="100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 20%; text-align:center;vertical-align:middle;"><!-- Sales Order No. --></td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;"><!-- Terms of payment --></td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;"><!-- Due Date --></td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;"><!-- Salesmen --></td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;"><!-- Refer to --></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;">
+                                    <span t-field="o.invoice_origin"/>
+                                </td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;">
+                                    <span t-field="o.invoice_payment_term_id"/>
+                                </td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;">
+                                    <span t-field="o.invoice_date_due"/>
+                                </td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;">
+                                    <span t-field="o.invoice_user_id"/>
+                                </td>
+                                <td style="width: 20%;text-align:center;vertical-align:middle;">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <table style="height:800px;" width="100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 10%;text-align:center;vertical-align:middle;"><!-- ITEM --></td>
+                                <td style="width: 10%;text-align:center;vertical-align:middle;"><!-- P/O NO --></td>
+                                <td style="width: 40%;text-align:center;vertical-align:middle;"><!-- Description --></td>
+                                <td style="width: 10%;text-align:center;vertical-align:middle;"><!-- Quantity --></td>
+                                <td style="width: 10%;text-align:center;vertical-align:middle;"><!-- Unit Price --></td>
+                                <td style="width: 10%;text-align:center;vertical-align:middle;"><!-- Amount --></td>
+                            </tr>
+                            <t t-set="count" t-value="0"/>
+                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <tr>
+                                    <t  t-set="count" t-value="count + 1"/>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;">
+                                        <span t-field="line.product_id.default_code"/>
+                                    </td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;">
+                                        
+                                    </td>
+                                    <td style="width: 40%;text-align:left;vertical-align:middle;padding-left:5px;">
+                                        <span t-field="line.product_id.name"/><br />
+                                        <div t-if='line.product_id.is_car' style='margin-left:35px;'><strong>Engine no.  </strong>&#160;&#160;<span t-field='line.product_id.engine_no'/><br /><strong>Chassis no.  </strong>&#160;&#160;<span t-field='line.product_id.chassis_no'/></div>
+                                    </td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;">
+                                        <span t-field="line.quantity"/>
+                                    </td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;">
+                                        <span t-field="line.price_unit"/>
+                                    </td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;">
+                                        <span t-field="line.price_subtotal"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 40%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 40%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 40%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                    <td style="width: 10%;text-align:left;vertical-align:middle;"></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <table style="height: 150px;" width="100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 65%; text-align:center;vertical-align:middle;" rowspan="2"></td>
+                                <td style="width: 17.5%;text-align:center;vertical-align:middle;"><!-- SUBTOTAL --></td>
+                                <td style="width: 17.5%;text-align:right;vertical-align:middle;padding-right:5px;">
+                                    <span t-field="o.amount_untaxed"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 17.5%;text-align:center;vertical-align:middle;"><!-- VALUE ADDED TAX --></td>
+                                <!-- <td style="width: 17.5%;text-align:right;vertical-align:middle;padding-right:5px;"> -->
+                                    <!-- <span t-field="o.amount_total"/> -->
+                                    <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                            <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                                <td style="width: 17.5%;text-align:right;vertical-align:middle;padding-right:5px;">
+                                                    <span class="text-nowrap" t-esc="amount_by_group[3]" />
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td class="text-right o_price_total">
+                                                    <span class="text-nowrap" t-esc="amount_by_group[3]"/>
+                                                </td>
+                                            </t>
+                                    </t>
+                                <!-- </td> -->
+                            </tr>
+                            <tr>
+                                <td style="width: 65%;text-align:left;vertical-align:middle;padding-left:5px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(<span t-field="o.company_id.currency_id"/>)&#160;&#160;<span t-esc="o.num_word"/></td>
+                                <td style="width: 17.5%;text-align:center;vertical-align:middle;"><!-- GRAND --> <!-- TOTAL --></td>
+                                <td style="width: 17.5%;text-align:right;vertical-align:middle;padding-right:5px;">
+                                    <span t-field="o.amount_total"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <table style="height: 227px;" width="100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 10%;vertical-align:middle;padding-left:5px;" rowspan="2"><!-- Deliverer --></td>
+                                <td style="width: 5%;vertical-align:middle;" rowspan="2"><!-- Date: --></td>
+                                <td style="width: 25%;vertical-align:middle;padding-left:5px;"><!-- By Cheque of bank --></td>
+                                <td style="width: 10%;"></td>
+                                <td style="width: 50%;vertical-align:bottom;text-align:center;" rowspan="4"><!-- Authorized Signature --></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 5%;padding-left:5px;"><!-- Chq. No. --></td>
+                                <td style="width: 15%;"><!-- Date --></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%;vertical-align:middle;padding-left:5px;" rowspan="2"><!-- Receiver: --> </td>
+                                <td style="width: 20%;vertical-align:middle;" rowspan="2"><!-- Date: --></td>
+                                <td style="width: 10%;vertical-align:middle;padding-left:5px;"><!-- Cash --></td>
+                                <td style="width: 10%;vertical-align:middle;"><!-- Date --></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;vertical-align:middle;padding-left:5px;"><!-- Collector --></td>
+                                <td style="width: 10%;vertical-align:middle;"><!-- Treasurer --></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
+        <!-- </t> -->
+    </template>
+
+
+    <template id="report_invoice_tax_continue">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="lang" t-value="doc.invoice_user_id.sudo().lang if doc.type in ('in_invoice', 'in_refund') else doc.partner_id.lang"/>
+                <t t-call="invoice_tax_report.report_invoice_tax_document_continue" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

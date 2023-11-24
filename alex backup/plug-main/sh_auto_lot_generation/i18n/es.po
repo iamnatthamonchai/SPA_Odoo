@@ -1,0 +1,62 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_auto_lot_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-11 05:59+0000\n"
+"PO-Revision-Date: 2022-07-11 05:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_auto_lot_generation
+#: model_terms:ir.ui.view,arch_db:sh_auto_lot_generation.sh_stock_move_inherit_view_form
+msgid "<span>Assign Lot Numbers</span>"
+msgstr "<span>Asignar números de lote</span>"
+
+#. module: sh_auto_lot_generation
+#: model_terms:ir.ui.view,arch_db:sh_auto_lot_generation.sh_stock_move_inherit_view_form
+msgid "<span>Clear All</span>"
+msgstr "<span>Limpiar todo</span>"
+
+#. module: sh_auto_lot_generation
+#: model_terms:ir.ui.view,arch_db:sh_auto_lot_generation.sh_stock_move_inherit_view_form
+msgid "Assign Lot Numbers"
+msgstr "Asignar números de lote"
+
+#. module: sh_auto_lot_generation
+#: model_terms:ir.ui.view,arch_db:sh_auto_lot_generation.sh_stock_move_inherit_view_form
+msgid "Clear Lines"
+msgstr "Líneas claras"
+
+#. module: sh_auto_lot_generation
+#: model:ir.model.fields,field_description:sh_auto_lot_generation.field_stock_move__number_of_lot
+msgid "Number of Lot"
+msgstr "Número de lotes"
+
+#. module: sh_auto_lot_generation
+#: code:addons/sh_auto_lot_generation/models/stock.py:0
+#, python-format
+msgid "Number of lot must be greater than zero"
+msgstr "El número de lote debe ser mayor que cero"
+
+#. module: sh_auto_lot_generation
+#: model:ir.model,name:sh_auto_lot_generation.model_stock_move
+msgid "Stock Move"
+msgstr "Mudanza de stock"
+
+#. module: sh_auto_lot_generation
+#: model:ir.model,name:sh_auto_lot_generation.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: sh_auto_lot_generation
+#: model:ir.model.fields,field_description:sh_auto_lot_generation.field_stock_picking__truck_number
+msgid "Truck Number"
+msgstr "Numero de camion"

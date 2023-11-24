@@ -1,0 +1,246 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* thaidev_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-04 12:28+0000\n"
+"PO-Revision-Date: 2020-08-04 12:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: thaidev_purchase
+#: model:ir.actions.report,print_report_name:thaidev_purchase.purchase_request_receipt
+msgid "('Purchase Request - %s' % (object.name))"
+msgstr "('ใบขอซื้อ - %s' % (object.name))"
+
+#. module: thaidev_purchase
+#: model:ir.actions.report,print_report_name:thaidev_purchase.purchase_order_receipt
+msgid ""
+"(object.state in ('draft', 'sent') and 'Request for Quotation - %s' % "
+"(object.name) or                 'Purchase Order - %s' % (object.name))"
+msgstr "(object.state in ('draft', 'sent') and 'ขอใบเสนอราคา - %s' % "
+"(object.name) or                 'คำสั่งซื้อ - %s' % (object.name))"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "<span>Description</span>"
+msgstr "<span>ลักษณะ</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "<span>Estimated Cost</span>"
+msgstr "<span>ค่าใช้จ่ายโดยประมาณ</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "<span>Item</span>"
+msgstr "<span>สิ่งของ</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "<span>Price/Unit</span>"
+msgstr "<span>ราคา / หน่วย</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "<span>Requested Date</span>"
+msgstr "<span>วันที่ขอ</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "<span>Specifications</span>"
+msgstr "<span>ข้อมูลจำเพาะ</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "<span>Taxes</span>"
+msgstr "<span>ภาษี</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "<span>Total</span>"
+msgstr "<span>รวม</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "<span>Units</span>"
+msgstr "<span>หน่วย</span>"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Address :"
+msgstr "ที่อยู่:"
+
+#. module: thaidev_purchase
+#: model:ir.model.fields,field_description:thaidev_purchase.field_purchase_order__amount_total_in_words
+msgid "Amount Total in Words"
+msgstr "ยอดรวมในคำพูด"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Amount in words"
+msgstr "จำนวนคำ"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Branch No :"
+msgstr "หมายเลขสาขา:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Company Copy"
+msgstr "สำเนา บริษัท"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Company Original"
+msgstr "บริษัท ดั้งเดิม"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Date :"
+msgstr "วันที่:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Internat Note :"
+msgstr "หมายเหตุระหว่างประเทศ:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Logo"
+msgstr "โลโก้"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Place Of Issue :"
+msgstr "สถานที่ออก:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Price :"
+msgstr "สถานที่ออก:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Price of Taxes:"
+msgstr "ราคาของภาษี:"
+
+#. module: thaidev_purchase
+#: model:ir.model,name:thaidev_purchase.model_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Purchase Order"
+msgstr "ใบสั่งซื้อ"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Purchase Order :"
+msgstr "ใบสั่งซื้อ :"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Purchase Representative"
+msgstr "ตัวแทนฝ่ายจัดซื้อ"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Purchase Request"
+msgstr "ใบขอซื้อ"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Purchase Request :"
+msgstr "คำขอซื้อ:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Reference :"
+msgstr "เอกสารอ้างอิง:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Requested by:"
+msgstr "การร้องขอจาก:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Signature of Accounting"
+msgstr "ลายเซ็นของการบัญชี"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Signature of Receiver"
+msgstr "ลายเซ็นของผู้รับ"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Signature of Sender"
+msgstr "ลายเซ็นของผู้ส่ง"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Tax No :"
+msgstr "หมายเลขภาษี:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Tax Number :"
+msgstr "หมายเลขภาษี :"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_request
+msgid "Tax Rate :"
+msgstr "อัตราภาษี :"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Taxes :"
+msgstr "ภาษี:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Total :"
+msgstr "รวม :"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "V A T :"
+msgstr "V A T:"
+
+#. module: thaidev_purchase
+#: model_terms:ir.ui.view,arch_db:thaidev_purchase.report_purchase_order
+msgid "Vendor :"
+msgstr "ผู้ขาย:"
+
+#. module: thaidev_purchase
+#: model:ir.actions.report,name:thaidev_purchase.purchase_order_receipt
+msgid "WeCarDealor Purchase order"
+msgstr "คำสั่งซื้อ WeCarDealor"
+
+#. module: thaidev_purchase
+#: model:ir.actions.report,name:thaidev_purchase.purchase_request_receipt
+msgid "WeCarDealor Purchase request"
+msgstr "คำขอซื้อ WeCarDealor"

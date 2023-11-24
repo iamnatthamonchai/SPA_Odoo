@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_commercial_invoice" model="report.paperformat">
+            <field name="name">Commercial Invoice</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">25</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">15</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="commercial_invoice_report_invoice" model="ir.actions.report">
+            <field name="name">Commercial Invoice (PDF)</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">commercial_invoice_report.commercial_invoice_report_pdf_tmpl_invoice</field>
+            <field name="report_file">commercial_invoice_report.commercial_invoice_report_pdf_tmpl_invoice</field>
+            <field name="print_report_name">'Commercial Invoice'</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="commercial_invoice_report.paperformat_commercial_invoice"/>
+        </record>
+
+        <template id="commercial_invoice_report_pdf_tmpl_invoice" name="report demo">
+            <t t-call="web.html_container">
+                <!-- <t t-call="web.external_layout"/> -->
+                <t t-call="commercial_invoice_report.external_layout_for_commerial_invoice">
+                <t t-foreach="docs" t-as="o">
+                    <!-- <style>
+                        .table td 
+                        {
+                            border-top:none !important;
+                        }
+                    </style>    -->
+
+                    <div class="header">
+                        <div class="col-12 text-right" style="margin-left:auto;margin-right:auto">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:200px;float:right;"/>
+                        </div>
+                    </div>
+                    
+                    <table colspan="16" class="table" style="border:1px solid black;width:100%;border-bottom:1px solid black;font-family:Calibri;">
+                        <tbody>
+                            <tr>
+                                <td colspan="16" class="text-center p-1 m-0"
+                                    style="font-size:16px;border:2px solid black;text-align:center;font-family:Calibri;;border-right:2px solid black;border-bottom:1px solid black;">
+                                    <b style="color:black;">Commercial Invoice</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" class="text-left"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;width:400px;border-left:2px solid black;font-family:Calibri;">
+                                    <strong><span>Exporter</span></strong><br/>
+                                    <span t-field="o.company_id.name"/><br/>
+                                    <span t-field="o.company_id.street"/>,
+                                    <span t-field="o.company_id.street2"/><br/>
+                                    <span t-field="o.company_id.city"/>,
+                                    <span t-field="o.company_id.zip"/><br/>
+                                    <span t-field="o.company_id.state_id.name"/>,
+                                    <span t-field="o.company_id.country_id.name"/><br/>
+                                    <span>Phone :</span>
+                                    <span t-field="o.company_id.phone"/><br/>
+                                    <span>Website : </span>
+                                    <span t-field="o.company_id.website"/>
+                                </td>
+                                <td colspan="9" class="text-left"
+                                    style="border:1px solid black;font-size:13px;pading-left:5px;border-right:2px solid black;font-family:Calibri;">
+                                    <span>Invoice No :</span>
+                                    <span t-field="o.name"/><br/>
+                                    <span>Invoice Date : </span>
+                                    <span t-field="o.invoice_date"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-left:2px solid black;font-family:Calibri;">
+                                    <strong><span>Consignee </span></strong><br/>
+                                    <span t-field="o.partner_shipping_id.name"/><br/>
+                                    <span t-field="o.partner_shipping_id.street"/>,
+                                    <span t-field="o.partner_shipping_id.street2"/><br/>
+                                    <span t-field="o.partner_shipping_id.city"/>,
+                                    <span t-field="o.partner_shipping_id.zip"/><br/>
+                                    <span t-field="o.partner_shipping_id.state_id.name"/>,
+                                    <span t-field="o.partner_shipping_id.country_id.name"/><br/>
+                                </td>
+                                <td colspan="9" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-right:2px solid black;font-family:Calibri;">
+                                    <strong><span>Buyer </span></strong><br/>
+                                    <span t-field="o.partner_id.name"/><br/>
+                                    <span t-field="o.partner_id.street"/>,
+                                    <span t-field="o.partner_id.street2"/><br/>
+                                    <span t-field="o.partner_id.city"/>,
+                                    <span t-field="o.partner_id.zip"/><br/>
+                                    <span t-field="o.partner_id.state_id.name"/>,
+                                    <span t-field="o.partner_id.country_id.name"/><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-left:2px solid black;font-family:Calibri;">
+                                    <strong><span>Notify Party</span></strong><br/>
+                                </td>
+                                <td colspan="7" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-right:1px solid black;font-family:Calibri;">
+                                    <span>Country Of Origin of Goods:</span>
+                                    <span t-field="o.company_id.country_id"/>
+                                    <br/>
+                                    <span>HS Code : </span>
+                                    <!-- <span t-field="o."/> -->
+                                </td>
+                                <td colspan="2" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-right:2px solid black;border-left:1px solid white;font-family:Calibri">
+                                    <span>Country Of Final Destination :</span><br/>
+                                    <span t-field="o.partner_id.country_id"/>
+                                    <!--  <span t-field="o.country_final_destination_id"/> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-left:2px solid black;font-family:Calibri;">
+                                    <span>Pre-Carriage by : </span>
+                                    <!-- <span t-field="o.pre_carriage"/> -->
+                                </td>
+                                <td colspan="4" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;font-family:Calibri;">
+                                    <span>Place of Receipt by Pre Carrier:</span><br/>
+                                    <span t-field="o.company_id.city"/>
+                                </td>
+                                <td colspan="7" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;font-family:Calibri;">
+                                    <span>Exporter's Reference</span>
+                                    <!-- <span t-field="o."/> -->
+                                </td>
+                                <td colspan="2" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-right:2px solid black;font-family:Calibri;">
+                                    <span>Other Reference(s)</span>
+                                    <!-- <span t-field="o."/> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-left:2px solid black;font-family:Calibri;">
+                                    <span>Vessel No :</span>
+                                    <!-- <span t-field="o.vessel_number"/> -->
+                                    </td>
+                                <td colspan="4" class="text-left m-0 p-1"
+                                style="border:1px solid black;font-size:13px;padding-left:5px;">
+                                <span>Port of Loading :</span>
+                                <!-- <span t-field="o.port_loading_id"/>                 -->
+                                </td>
+                                <td rowspan="2" colspan="7" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;font-family:Calibri;">
+                                    <strong><span>Terms of Payment :</span></strong><br/>
+                                    <span t-field="o.invoice_payment_term_id.name"/>
+                                </td>
+                                <td rowspan="2" colspan="2" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-right:2px solid black;font-family:Calibri;">
+                                    <strong><span>Delivery :</span></strong><br/>
+                                    <!-- <span t-field="o."/> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;padding-left:5px;border-left:2px solid black;font-family:Calibri;">
+                                    <strong><span>Port of Discharge :</span> </strong>
+                                    <!-- <span t-field="o.port_discharge_id"/>                -->
+                                    </td>
+                                <td colspan="4" class="text-left m-0 p-1"
+                                style="border:1px solid black;font-size:13px;padding-left:5px;font-family:Calibri;">
+                                <strong><span>Place of Delivery :</span><br/></strong>
+                                <span t-field="o.partner_id.country_id"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table colspan="16" class="table" style="border:2px solid black;width:100%;margin-top:-18px;border-top:1px solid black;font-family:Calibri;">
+                        <tbody>
+
+                            <thead class="m-0 p-0">
+                                <tr>
+                                    <th colspan="1" class="text-center"
+                                    style="border:1px solid black;font-size:13px;width:60px;">Sr.No.</th>
+                                    <th colspan="1" class="text-center"
+                                    style="border:1px solid black;font-size:13px;">Item No.</th>
+                                    <th colspan="9" class="text-left"
+                                    style="border:1px solid black;font-size:13px;width:178px">Description of Goods</th>
+                                    <th colspan="1" class="text-center"
+                                    style="border:1px solid black;font-size:13px;width:73px">Qty</th>
+                                    <th colspan="1" class="text-center"
+                                    style="border:1px solid black;font-size:13px;width:92px">Unit Of Mesure</th>
+                                    <th colspan="1" class="text-center"
+                                    style="border:1px solid black;font-size:13px;width:80px">Unit Price</th>
+                                    <th colspan="1" class="text-center"
+                                    style="border:1px solid black;font-size:13px;width:60px">Discount%</th>
+                                    <th colspan="1" class="text-center"
+                                    style="border:1px solid black;font-size:13px;width:99px">Amount</th>                                    
+                                </tr> 
+                            </thead> 
+                            <!-- <tr>
+                                <th colspan="1" class="text-center"
+                                style="border:1px solid black;font-size:13px;width:58px;">Sr. No.</th>
+                                <th colspan="1" class="text-center"
+                                style="border:1px solid black;font-size:13px;">Item No.</th>
+                                <th colspan="9" class="text-left"
+                                style="border:1px solid black;font-size:13px;width:178px">Description of Goods</th>
+                                <th colspan="1" class="text-center"
+                                style="border:1px solid black;font-size:13px;width:73px">Qty</th>
+                                <th colspan="1" class="text-center"
+                                style="border:1px solid black;font-size:13px;width:92px">Unit Of Mesure</th>
+                                <th colspan="1" class="text-center"
+                                style="border:1px solid black;font-size:13px;width:80px">Unit Price</th>
+                                <th colspan="1" class="text-center"
+                                style="border:1px solid black;font-size:13px;width:60px">Discount%</th>
+                                <th colspan="1" class="text-center"
+                                style="border:1px solid black;font-size:13px;width:99px">Amount</th>                                    
+                            </tr> -->
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <tr style="height:1px;">
+                                    <t t-if="line.product_id.name">
+                                        <td colspan="1" class="text-center" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;font-family:Calibri;">
+                                            <span t-esc="i"/>
+                                            <t t-set="i" t-value="i+1"/>
+                                        </td>
+                                        <td colspan="1" class="text-center" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;font-family:Calibri;">
+                                            <span t-esc="line.product_id.product_tmpl_id.default_code"/>
+                                        </td>
+                                        <td colspan="9" class="text-left" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;width:180px;font-family:Calibri;">
+                                            <span t-field="line.product_id.name"/>
+                                        </td>
+                                        <td colspan="1" class="text-center" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;font-family:Calibri;">
+                                            <span t-esc="'%.2f'%(line.quantity)"/>&#160;
+                                        </td>
+                                        <td colspan="1" class="text-center" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;width:90px;font-family:Calibri;">
+                                            <span t-esc="line.product_uom_id.name"/>
+                                        </td>
+                                        <td colspan="1" class="text-center" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;width:76px;font-family:Calibri;">
+                                            <span t-esc="line.price_unit"/>
+                                        </td>
+                                        <td colspan="1" class="text-center" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;font-family:Calibri;">
+                                            <!-- <span t-esc="line."/> -->
+                                        </td>
+                                        <td colspan="1" class="text-center" style="border:1px solid black;border-right:1px solid black;border-bottom:none !important;padding:0.4rem;font-size:13px;font-family:Calibri;">
+                                            <span t-esc="line.price_subtotal"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t> 
+                            <tr>
+                                <td colspan="15" class="text-left m-0 p-1"
+                                style="border:1px solid black;border-top:1px solid black !important;font-size:13px;font-family:Calibri;">
+                                <strong><span>Amount in words </span><span t-field="o.currency_id.name"/>:</strong>
+                                <!-- <span t-field="o.amount_total_words"/> -->
+                                </td>                                
+                                <td colspan="1" class="text-center m-0 p-1"
+                                style="border:1px solid black;border-top:1px solid black !important;font-size:13px;font-family:Calibri;">
+                                <span t-field="o.amount_total"/>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td colspan="16" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;pading-left:5px;font-family:Calibri;">
+                                    <strong><span>Gross Weight :</span></strong>
+                                    <!-- <span t-field="o."/><br/> --><br/>
+                                    <strong><span>Net Weight : </span></strong>
+                                    <!-- <span t-field="o."/> --><br/>
+                                    <strong><span>No. of pallets :</span></strong>
+                                    <!-- <span t-field="o."/><br/> --><br/>
+                                    <strong><span>Marks No. : </span></strong>
+                                    <!-- <span t-field="o."/> --><br/>
+                                    <strong><span style="font-size:12px;">INSURANCE POLICY NO.</span></strong>
+                                    <!-- <span t-field="o."/> -->
+                                    <strong><span style="padding-left:200px;">Note : </span></strong>
+                                    <!-- <span t-field="o."/> -->
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td colspan="11" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:13px;pading-left:5px;">
+                                    <strong><span>Declaration:</span></strong><br/>
+                                    <br />
+                                    <br/>
+                                    <br />
+                                    
+                                    <strong><span>Tin:</span></strong>
+                                </td>
+                                <td colspan="5" class="text-center m-0 p-1"
+                                    style="border:1px solid black;font-size:12px;pading-left:5px;">
+                                    <strong><span>For </span><span t-field="o.company_id.name"/><br/></strong><br/>
+                                    <div style="margin-top:41px;"><span>Authorized Signatory</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="16" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:12px;pading-left:5px;">
+                                    <strong><span>NOTE : WE INTEND TO CLAIM REWARDS UNDER EXPORTS OF GOODS UNDER RODTEP SCHEME FROM INDIA(RODTEP)</span>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td colspan="16" class="text-left m-0 p-1"
+                                    style="border:1px solid black;font-size:11px;pading-left:5px;">
+                                    <span>The Exporter ...</span>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+
+
+                    <!-- <div class="footer" style="border-top:1px solid black">
+                        <table colspan="16" class="p-1" style="border:1px solid black;width:100%;border-top:1px solid black;font-family:Calibri;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="11" class="text-left m-0 p-1"
+                                        style="border:1px solid black;font-size:13px;width:193px;font-family:Calibri;">
+                                        <strong><span>Declaration:</span></strong><br/><br/>
+                                        <br />
+                                        <br/>
+                                        <br />
+                                        
+                                        <strong><span>Tin:</span></strong>
+                                    </td>
+                                    <td colspan="5" class="text-center m-0 p-1"
+                                        style="border:1px solid black;font-size:12px;font-family:Calibri">
+                                        <strong><span>For </span><span t-field="o.company_id.name"/><br/></strong><br/>
+                                        <div style="margin-top:59px"><span style="margin-top:59px;">Authorized Signatory</span></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="16" class="text-left m-0 p-1"
+                                        style="border:1px solid black;font-size:12px;pading-left:5px;font-family:Calibri;">
+                                        <strong style="font-size:12px"><span>NOTE : WE INTEND TO CLAIM REWARDS UNDER EXPORTS OF GOODS UNDER RODTEP SCHEME FROM INDIA(RODTEP)</span>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>        
+
+                    </div> -->
+                   
+                </t>
+                </t>
+            </t>
+            
+        </template>
+
+        <template id="external_layout_for_commerial_invoice">
+            <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-call="web.address_layout"/>
+                <t t-raw="0"/>
+            </div>
+        </template>
+    </data>
+</odoo>

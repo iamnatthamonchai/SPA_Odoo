@@ -1,0 +1,181 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_picking_order_line
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.1alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 11:46+0000\n"
+"PO-Revision-Date: 2020-10-01 11:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_stock_move_calendar
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_stock_move_line_calendar
+msgid "Calendar View"
+msgstr "عرض التقويم"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_search
+msgid "Deliveries"
+msgstr "التسليم"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_tree
+msgid "Destination Location"
+msgstr "موقع وجهة"
+
+#. module: sh_picking_order_line
+#: model:ir.actions.act_window,name:sh_picking_order_line.sh_pol_picking_order_line_move_line_action
+#: model:ir.ui.menu,name:sh_picking_order_line.sh_pol_picking_order_line_details_ops_menu
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+msgid "Detailed Operations Line"
+msgstr "خط العمليات التفصيلي"
+
+#. module: sh_picking_order_line
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move__display_name
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: sh_picking_order_line
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move__id
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move_line__id
+msgid "ID"
+msgstr "هوية شخصية"
+
+#. module: sh_picking_order_line
+#: model:ir.actions.act_window,name:sh_picking_order_line.sh_pol_incoming_order_line_move_action
+#: model:ir.ui.menu,name:sh_picking_order_line.sh_pol_incoming_order_line_ops_menu
+msgid "Incoming Operations Line"
+msgstr "خط العمليات الواردة"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_search
+msgid "Internal"
+msgstr "داخلي"
+
+#. module: sh_picking_order_line
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move____last_update
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_search
+msgid "Manufacturing"
+msgstr "تصنيع"
+
+#. module: sh_picking_order_line
+#: model:ir.actions.act_window,name:sh_picking_order_line.sh_pol_picking_order_line_move_action
+#: model:ir.ui.menu,name:sh_picking_order_line.sh_pol_picking_order_line_ops_menu
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_tree
+msgid "Operations Line"
+msgstr "خط العمليات"
+
+#. module: sh_picking_order_line
+#: model:ir.actions.act_window,name:sh_picking_order_line.sh_pol_outgoing_order_line_move_action
+#: model:ir.ui.menu,name:sh_picking_order_line.sh_pol_outgoing_order_line_ops_menu
+msgid "Outgoing Operations Line"
+msgstr "خط العمليات الصادرة"
+
+#. module: sh_picking_order_line
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move__sh_pol_picking_order_line_picking_type_code
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move_line__sh_pol_picking_order_line_picking_type_code
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_search
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_search
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_tree
+msgid "Picking Operation"
+msgstr "عملية الانتقاء"
+
+#. module: sh_picking_order_line
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move__sh_pol_picking_order_line_picking_type_id
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move_line__sh_pol_picking_order_line_picking_type_id
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_search
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_search
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_tree
+msgid "Picking Type"
+msgstr "نوع الانتقاء"
+
+#. module: sh_picking_order_line
+#: model:ir.model,name:sh_picking_order_line.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "تحركات المنتج (خط نقل المخزون)"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+msgid "Quantity Done"
+msgstr "الكمية المنجزة"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_search
+msgid "Receptions"
+msgstr "حفلات الاستقبال"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: sh_picking_order_line
+#: model:ir.model.fields,help:sh_picking_order_line.field_stock_move_line__sh_pol_picking_order_line_origin
+msgid "Reference of the document"
+msgstr "مرجع الوثيقة"
+
+#. module: sh_picking_order_line
+#: model:ir.model.fields,field_description:sh_picking_order_line.field_stock_move_line__sh_pol_picking_order_line_origin
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_search
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_search
+msgid "Source Document"
+msgstr "مصدر وثائق"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_tree
+msgid "Source Location"
+msgstr "موقع المصدر"
+
+#. module: sh_picking_order_line
+#: model:ir.model,name:sh_picking_order_line.model_stock_move
+msgid "Stock Move"
+msgstr "نقل الأسهم"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.view_stock_move_graph
+msgid "Stock Move Line"
+msgstr "خط نقل المخزون"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.view_sh_stock_move_line_pivot
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.view_stock_move_pivot
+msgid "Stock Move Line Analysis"
+msgstr "تحليل خط نقل الأسهم"
+
+#. module: sh_picking_order_line
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_form
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_line_tree
+#: model_terms:ir.ui.view,arch_db:sh_picking_order_line.sh_pol_picking_order_line_move_tree
+msgid "Unit of Measure"
+msgstr "وحدة القياس"

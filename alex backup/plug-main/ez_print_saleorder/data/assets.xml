@@ -1,0 +1,13 @@
+<odoo>
+    <!-- <template
+        id="ez_print_sale_report_assets_common"
+        name="ez_print_saleorder report assets"
+        inherit_id="web.report_assets_common">
+
+        <xpath expr="." position="inside">
+            <link
+                href="/ez_print_saleorder/static/src/css/report.css"
+                rel="stylesheet"/>
+        </xpath>
+    </template> -->
+</odoo>

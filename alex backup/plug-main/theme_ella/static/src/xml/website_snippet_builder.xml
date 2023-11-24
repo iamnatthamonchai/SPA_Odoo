@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="theme_ella.builder_block">
+        <div class="snippets_collection" id="builder">
+            <div class="edit-snippet-builder-box">
+                <div class="row">
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/slider-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <div id="jewelery" class="s_carousel s_carousel_default carousel slide oe_snippet_body animation-slider jewellery-home-slider" data-interval="10000">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#jewelery" data-slide-to="0" class="active"></li>
+                                            <li data-target="#jewelery" data-slide-to="1"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item bg-cover bg-no-repeat active" style="background-image:url(/theme_ella/static/src/img/banner-1-1.jpg)" data-name="Slide">
+                                                <div class="container">
+                                                    <div class="row screen justify-content-end align-items-center">
+                                                        <div class="col-lg-6">
+                                                            <div class="fs-text">
+                                                                <h2 class="dark-color font-alt">Earrings <br/> Collections</h2>
+                                                                <div class="btn-bar">
+                                                                    <a class="as-btn as-btn-t-black" href="#">Shop Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item bg-cover bg-no-repeat" style="background-image:url(/theme_ella/static/src/img/banner-1-2.jpg)" data-name="Slide">
+                                                <div class="container">
+                                                    <div class="row screen justify-content-end align-items-center">
+                                                        <div class="col-lg-6">
+                                                            <div class="fs-text">
+                                                                <h2 class="dark-color font-alt">Earrings <br/> Collections</h2>
+                                                                <div class="btn-bar">
+                                                                    <a class="as-btn as-btn-t-black" href="#">Shop Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-control-prev" data-target="#jewelery" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                            <span class="carousel-control-prev-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Previous</span>
+                                        </div>
+                                        <div class="carousel-control-next" data-target="#jewelery" data-slide="next" role="img" aria-label="Next" title="Next">
+                                            <span class="carousel-control-next-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Next</span>
+                                        </div>
+                                    </div>
+                                </textarea>
+                                <h6>Slider 1</h6>
+                                <label class="e-sb-label" for="e_slider_01"><input id="e_slider_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/slider-2.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <div id="sport" class="s_carousel s_carousel_default carousel slide oe_snippet_body animation-slider half-screen-slider" data-interval="10000">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#sport" data-slide-to="0" class="active"></li>
+                                            <li data-target="#sport" data-slide-to="1"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" style="background-image:url(/theme_ella/static/src/img/sport-banner-1.jpg)" data-name="Slide">
+                                                <div class="container">
+                                                    <div class="row full-screen justify-content-end align-items-center">
+                                                        <div class="col-lg-6">
+                                                            <div class="ani-img">
+                                                                <img src="/theme_ella/static/src/img/sport-banner-i1.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="fs-text">
+                                                                <h2 class="white-color font-alt">New Shoes Collections</h2>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                                <div class="btn-bar">
+                                                                    <a class="as-btn as-btn-t-white" href="#">Shop Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item" style="background-image:url(/theme_ella/static/src/img/sport-banner-2.jpg)" data-name="Slide">
+                                                <div class="container">
+                                                    <div class="row full-screen justify-content-end align-items-center">
+                                                        <div class="col-lg-6">
+                                                            <div class="ani-img">
+                                                                <img src="/theme_ella/static/src/img/sport-banner-i2.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="fs-text">
+                                                                <h2 class="white-color font-alt">New Shoes Collections</h2>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                                <div class="btn-bar">
+                                                                    <a class="as-btn as-btn-t-white" href="#">Shop Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-control-prev" data-target="#sport" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                            <span class="carousel-control-prev-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Previous</span>
+                                        </div>
+                                        <div class="carousel-control-next" data-target="#sport" data-slide="next" role="img" aria-label="Next" title="Next">
+                                            <span class="carousel-control-next-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Next</span>
+                                        </div>
+                                    </div>
+                                </textarea>
+                                <h6>Slider 2</h6>
+                                <label class="e-sb-label" for="e_slider_02"><input id="e_slider_02" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/slider-3.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <div id="sport01" class="s_carousel s_carousel_default carousel slide oe_snippet_body animation-slider furniture-slider" data-interval="10000">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#sport01" data-slide-to="0" class="active"></li>
+                                            <li data-target="#sport01" data-slide-to="1"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active bg-cover bg-no-repeat" style="background-image:url('/theme_ella/static/src/img/fu-banner1.jpg');" data-name="Slide">
+                                                <div class="container">
+                                                    <div class="row screen justify-content-end align-items-center">
+                                                        <div class="col-lg-12">
+                                                            <div class="fs-text">
+                                                                <h2>furniture</h2>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                                <div class="btn-bar">
+                                                                    <a class="as-btn as-btn-theme" href="#">Discover shop</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item bg-cover bg-no-repeat" style="background-image:url('/theme_ella/static/src/img/fu-banner2.jpg');" data-name="Slide">
+                                                <div class="container">
+                                                    <div class="row screen justify-content-end align-items-center">
+                                                        <div class="col-lg-12">
+                                                            <div class="fs-text">
+                                                                <h2>furniture</h2>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                                <div class="btn-bar">
+                                                                    <a class="as-btn as-btn-theme" href="#">Discover shop</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-control-prev" data-target="#sport01" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                            <span class="carousel-control-prev-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Previous</span>
+                                        </div>
+                                        <div class="carousel-control-next" data-target="#sport01" data-slide="next" role="img" aria-label="Next" title="Next">
+                                            <span class="carousel-control-next-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Next</span>
+                                        </div>
+                                    </div>
+                                </textarea>
+                                <h6>Slider 3</h6>
+                                <label class="e-sb-label" for="e_slider_03"><input id="e_slider_03" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/slider-4.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <div id="kids_slider" class="s_carousel s_carousel_default carousel slide oe_snippet_body box-screen-slider" data-interval="10000">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#kids_slider" data-slide-to="0" class="active"></li>
+                                            <li data-target="#kids_slider" data-slide-to="1"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" data-name="Slide">
+                                                <img src="/theme_ella/static/src/img/kids-banner-1.jpg" />
+                                            </div>
+                                            <div class="carousel-item" data-name="Slide">
+                                                <img src="/theme_ella/static/src/img/kids-banner-2.jpg" />
+                                            </div>
+                                        </div>
+                                        <div class="carousel-control-prev" data-target="#kids_slider" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                            <span class="carousel-control-prev-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Previous</span>
+                                        </div>
+                                        <div class="carousel-control-next" data-target="#kids_slider" data-slide="next" role="img" aria-label="Next" title="Next">
+                                            <span class="carousel-control-next-icon"></span>
+                                            <span class="sr-only o_default_snippet_text">Next</span>
+                                        </div>
+                                    </div>
+                                </textarea>
+                                <h6>Slider 4</h6>
+                                <label class="e-sb-label" for="e_slider_04"><input id="e_slider_04" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/banner-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="home-banner-01" style="background-image: url(/theme_ella/static/src/img/banner-5-1.jpg); ">
+                                        <div class="container">
+                                            <div class="row align-items-center full-screen justify-content-center">
+                                                <div class="col-lg-8 text-center">
+                                                    <h1 class="white-color">Our Analysis is your financial results</h1>
+                                                    <p class="white-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <div class="btn-bar">
+                                                        <a href="#" class="as-btn as-btn-white">Read More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Banner</h6>
+                                <label class="e-sb-label" for="e_slider_05"><input id="e_slider_05" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/about-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="section">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-6">
+                                                    <div class="side-feature">
+                                                        <h2 class="dark-color">Beautifully Handcrafted Templates For Your Company Website.</h2> 
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                        <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        <div class="btn-bar">
+                                                            <a href="#" class="as-btn as-btn-theme">Read More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img src="/theme_ella/static/src/img/home-5-f1.jpg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>About 1</h6>
+                                <label class="e-sb-label" for="e_about_01"><input id="e_about_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/about-2.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="about-section">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-6">
+                                                    <img src="/theme_ella/static/src/img/about-text.jpg" />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="about-text">
+                                                          <h2>About Us</h2>
+                                                          <p><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                                          <p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                          <div class="signature">
+                                                              <img src="/theme_ella/static/src/img/signature.jpg" />
+                                                          </div>
+                                                          <div class="name">
+                                                              <label>James Hansen</label>
+                                                              <span>/Director</span>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>About 2</h6>
+                                <label class="e-sb-label" for="e_about_02"><input id="e_about_02" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/about-3.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="about-large-section" style="background-color: #e4d8db;">
+                                        <div class="container-fluid">
+                                            <div class="row align-items-center justify-content-center">
+                                                <div class="col-lg-3">
+                                                    <div class="about-text">
+                                                          <h2>We've added five new necklaces to our collections.</h2>
+                                                          <div class="btn-bar">
+                                                            <a class="as-btn as-btn-theme" href="#">Shop necklaces</a>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <img src="/theme_ella/static/src/img/about-01.jpg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>About 3</h6>
+                                <label class="e-sb-label" for="e_about_03"><input id="e_about_03" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/about-4.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="about-section-furniture">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-6">
+                                                    <img src="/theme_ella/static/src/img/fu-about.png" />
+                                                </div>
+                                                <div class="col-lg-5 offset-lg-1">
+                                                    <div class="about-text">
+                                                          <h2>Designer’s Choice</h2>
+                                                          <h5>The Bat Lounge Chair</h5>
+                                                          <p><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                                          <p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                          <div class="signature">
+                                                              <img src="/theme_ella/static/src/img/signature.jpg" />
+                                                          </div>
+                                                          <div class="name">
+                                                              <label>James Hansen</label>
+                                                              <span>/Director</span>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>About 4</h6>
+                                <label class="e-sb-label" for="e_about_04"><input id="e_about_04" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/feature-box-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="section" style="background-color: #f4f8fb">
+                                        <div class="container">
+                                            <div class="row justify-content-center m-45px-b sm-m-25px-b">
+                                                <div class="col-lg-8">
+                                                  <div class="section-title text-center">
+                                                      <h2 class="dark-color">Effective tools for busy Administrators</h2>
+                                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                  </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="feature-box">
+                                                        <div class="icon">
+                                                            <i class="fa fa-desktop"></i>
+                                                        </div>
+                                                        <div class="feature-content">
+                                                            <h5>Desktop Friendly</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="feature-box">
+                                                        <div class="icon">
+                                                            <i class="fa fa-pencil"></i>
+                                                        </div>
+                                                        <div class="feature-content">
+                                                            <h5>Logo and Identity</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="feature-box">
+                                                        <div class="icon">
+                                                            <i class="fa fa-paint-brush"></i>
+                                                        </div>
+                                                        <div class="feature-content">
+                                                            <h5>Graphics Design</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Icon Box</h6>
+                                <label class="e-sb-label" for="e_feature_01"><input id="e_feature_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/counter-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="section" style="background-color: #101010;">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="counter-box">
+                                                        <span class="white-color">80</span>
+                                                        <label class="white-color">Awards Won</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="counter-box">
+                                                        <span class="white-color">48</span>
+                                                        <label class="white-color">Satisfied Clients</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="counter-box">
+                                                        <span class="white-color">56</span>
+                                                        <label class="white-color">Startup Growth</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="counter-box">
+                                                        <span class="white-color">28</span>
+                                                        <label class="white-color">Average Prices</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Count Box</h6>
+                                <label class="e-sb-label" for="e_feature_02"><input id="e_feature_02" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/price-table.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="section">
+                                        <div class="container">
+                                            <div class="row justify-content-center sm-m-25px-b m-45px-b">
+                                                <div class="col-lg-8 col-md-10">
+                                                  <div class="section-title text-center">
+                                                      <h2 class="dark-color">Pricing Plans</h2>
+                                                      <p>Mombo is a HTML5 template based on Sass and Bootstrap 4 with modern and creative multipurpose design you can use it as a startups.</p>
+                                                  </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="price-table">
+                                                      <div class="pt-head">
+                                                          <h5><span>$</span>49</h5>
+                                                      </div>
+                                                      <div class="pt-body">
+                                                          <h4>Basic Package</h4>
+                                                          <ul class="list-type-02">
+                                                              <li><i class="fa fa-check"></i> Drag &amp; Drop Builder</li>
+                                                              <li><i class="fa fa-check"></i> 1,000s of Templates Ready</li>
+                                                              <li><i class="fa fa-check"></i> Blog Tools</li>
+                                                              <li><i class="fa fa-check"></i> eCommerce Store</li>
+                                                              <li><i class="fa fa-check"></i> 30+ Webmaster Tools</li>
+                                                          </ul>
+                                                      </div>
+                                                      <div class="pt-footer">
+                                                          <a class="as-btn as-btn-theme" href="#">Sign Up</a>
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="price-table">
+                                                      <div class="pt-head">
+                                                          <h5><span>$</span>49</h5>
+                                                      </div>
+                                                      <div class="pt-body">
+                                                          <h4>Basic Package</h4>
+                                                          <ul class="list-type-02">
+                                                              <li><i class="fa fa-check"></i> Drag &amp; Drop Builder</li>
+                                                              <li><i class="fa fa-check"></i> 1,000s of Templates Ready</li>
+                                                              <li><i class="fa fa-check"></i> Blog Tools</li>
+                                                              <li><i class="fa fa-check"></i> eCommerce Store</li>
+                                                              <li><i class="fa fa-check"></i> 30+ Webmaster Tools</li>
+                                                          </ul>
+                                                      </div>
+                                                      <div class="pt-footer">
+                                                          <a class="as-btn as-btn-theme" href="#">Sign Up</a>
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="price-table">
+                                                      <div class="pt-head">
+                                                          <h5><span>$</span>49</h5>
+                                                      </div>
+                                                      <div class="pt-body">
+                                                          <h4>Basic Package</h4>
+                                                          <ul class="list-type-02">
+                                                              <li><i class="fa fa-check"></i> Drag &amp; Drop Builder</li>
+                                                              <li><i class="fa fa-check"></i> 1,000s of Templates Ready</li>
+                                                              <li><i class="fa fa-check"></i> Blog Tools</li>
+                                                              <li><i class="fa fa-check"></i> eCommerce Store</li>
+                                                              <li><i class="fa fa-check"></i> 30+ Webmaster Tools</li>
+                                                          </ul>
+                                                      </div>
+                                                      <div class="pt-footer">
+                                                          <a class="as-btn as-btn-theme" href="#">Sign Up</a>
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="price-table">
+                                                      <div class="pt-head">
+                                                          <h5><span>$</span>49</h5>
+                                                      </div>
+                                                      <div class="pt-body">
+                                                          <h4>Basic Package</h4>
+                                                          <ul class="list-type-02">
+                                                              <li><i class="fa fa-check"></i> Drag &amp; Drop Builder</li>
+                                                              <li><i class="fa fa-check"></i> 1,000s of Templates Ready</li>
+                                                              <li><i class="fa fa-check"></i> Blog Tools</li>
+                                                              <li><i class="fa fa-check"></i> eCommerce Store</li>
+                                                              <li><i class="fa fa-check"></i> 30+ Webmaster Tools</li>
+                                                          </ul>
+                                                      </div>
+                                                      <div class="pt-footer">
+                                                          <a class="as-btn as-btn-theme" href="#">Sign Up</a>
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Price Table</h6>
+                                <label class="e-sb-label" for="e_feature_03"><input id="e_feature_03" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/contact-us.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="section bg-cover" style="background-image: url(/theme_ella/static/src/img/home-5-f3.jpg);">
+                                      <div class="container">
+                                          <div class="row justify-content-center align-items-center">
+                                                <!-- section title -->
+                                                <div class="col-lg-5">
+                                                <div class="section-title">
+                                                    <h2 class="white-color">let's start working together</h2>
+                                                </div>
+                                                </div>
+                                                <!-- end section title -->
+                                                <!-- contact info -->
+                                                <div class="col-10 col-lg-4 col-xl-3">
+                                                    <div class="contact-info dark theme-bg m-25px-tb">
+                                                          <h5>Our Address Info</h5>
+                                                          <p class="address">301 The Greenhouse London, E2 8DY UK</p>
+                                                          <h5>Our Contact Info</h5>
+                                                          <p class="email"><a href="mailto:support@domain.com">support@domain.com</a></p>
+                                                          <p class="call"><a href="tel:820-885-3321">820-885-3321</a></p>
+                                                    </div>
+                                                </div>
+                                              <!-- end contact info -->
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Contact Info</h6>
+                                <label class="e-sb-label" for="e_feature_04"><input id="e_feature_04" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/feature-box-2.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="policies-note-snippet" style="background-color:#f8e2d6;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="d-flex">
+                                                        <div class="pn-icon">
+                                                            <i class="fa fa-truck"></i>
+                                                        </div>
+                                                        <div class="pn-text">
+                                                            <h6>Free Shipping</h6>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="d-flex">
+                                                        <div class="pn-icon">
+                                                            <i class="fa fa-lock"></i>
+                                                        </div>
+                                                        <div class="pn-text">
+                                                            <h6>Payment Security</h6>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="d-flex">
+                                                        <div class="pn-icon">
+                                                            <i class="fa fa-headphones"></i>
+                                                        </div>
+                                                        <div class="pn-text">
+                                                            <h6>Customer support</h6>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="d-flex">
+                                                        <div class="pn-icon">
+                                                            <i class="fa fa-refresh"></i>
+                                                        </div>
+                                                        <div class="pn-text">
+                                                            <h6>Returns Policy</h6>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Policies</h6>
+                                <label class="e-sb-label" for="e_feature_05"><input id="e_feature_05" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/testimonial-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="testimonial-slider" style="background-image: url('/theme_ella/static/src/img/testimonial-bg.jpg');">
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-9">
+                                                    <div id="testimonial-slider" class="s_carousel s_carousel_default carousel slide oe_snippet_body carousel slide" data-interval="10000">
+                                                        <ol class="carousel-indicators">
+                                                            <li data-target="#testimonial-slider" data-slide-to="0" class="active"></li>
+                                                            <li data-target="#testimonial-slider" data-slide-to="1"></li>
+                                                        </ol>
+                                                        <div class="carousel-inner">
+                                                            <div class="carousel-item active" data-name="Slide">
+                                                                <div class="testimonial-box">
+                                                                    <div class="row">
+                                                                        <div class="col-4">
+                                                                            <div class="ts-img">
+                                                                                <img src="/theme_ella/static/src/img/client.png" />
+                                                                            </div>        
+                                                                        </div>
+                                                                        <div class="col-8">
+                                                                            <i class="icon fa fa-quote-left"></i>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                                            <div class="ts-name">
+                                                                                <label>Nancy Bayer</label>
+                                                                                <span>/ Fashion Designer</span>
+                                                                            </div>        
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="carousel-item" data-name="Slide">
+                                                                <div class="testimonial-box">
+                                                                    <div class="row">
+                                                                        <div class="col-4">
+                                                                            <div class="ts-img">
+                                                                                <img src="/theme_ella/static/src/img/client2.png" />
+                                                                            </div>        
+                                                                        </div>
+                                                                        <div class="col-8">
+                                                                            <i class="icon fa fa-quote-left"></i>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                                            <div class="ts-name">
+                                                                                <label>Nancy Bayer</label>
+                                                                                <span>/ Fashion Designer</span>
+                                                                            </div>        
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Testimonial 1</h6>
+                                <label class="e-sb-label" for="e_testimonials_01"><input id="e_testimonials_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/testimonial-2.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="aside-testimonial-slider">
+                                        <div class="container">
+                                            <div id="testimonial-slider" class="s_carousel s_carousel_default carousel slide oe_snippet_body carousel slide" data-interval="10000">
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active" data-name="Slide">
+                                                        <div class="testimonial-box-01">
+                                                            <div class="ts-img">
+                                                                <img src="/theme_ella/static/src/img/client3.jpg" />
+                                                            </div>
+                                                            <div class="ts-content">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                                <div class="ts-name">
+                                                                    <label>Nancy Bayer</label>
+                                                                    <span>/ Fashion Designer</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item" data-name="Slide">
+                                                        <div class="testimonial-box-01">
+                                                            <div class="ts-img">
+                                                                <img src="/theme_ella/static/src/img/client4.jpg" />
+                                                            </div>
+                                                            <div class="ts-content">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                                <div class="ts-name">
+                                                                    <label>Nancy Bayer</label>
+                                                                    <span>/ Fashion Designer</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#testimonial-slider" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#testimonial-slider" data-slide-to="1"></li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Testimonial 2</h6>
+                                <label class="e-sb-label" for="e_testimonials_02"><input id="e_testimonials_02" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/testimonial-3.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="section" style="background-color: #f4f8fb">
+                                        <div class="container">
+                                            <div class="row justify-content-center m-45px-b sm-m-25px-b">
+                                                <div class="col-lg-8">
+                                                  <div class="section-title text-center">
+                                                      <h2 class="dark-color">Loved by businesses, and individuals across the globe.</h2>
+                                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                  </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="testimonial-box-02">
+                                                      <section class="tc-img d-flex flex-column align-items-center text-center justify-content-center" style="background-image: url(/theme_ella/static/src/img/home-5-f2.jpg);">
+                                                          <div class="tc-info">
+                                                              <h5>Nancy Bayers</h5>
+                                                              <label class="font-alt">Co-founder</label>
+                                                          </div>
+                                                      </section>
+                                                      <div class="tc-text">
+                                                          <i class="fa fa-quote-right"></i>
+                                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="testimonial-box-02">
+                                                      <section class="tc-img d-flex flex-column align-items-center text-center justify-content-center" style="background-image: url(/theme_ella/static/src/img/home-5-f2.jpg);">
+                                                          <div class="tc-info">
+                                                              <h5>Nancy Bayers</h5>
+                                                              <label class="font-alt">Co-founder</label>
+                                                          </div>
+                                                      </section>
+                                                      <div class="tc-text">
+                                                          <i class="fa fa-quote-right"></i>
+                                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="testimonial-box-02">
+                                                      <section class="tc-img d-flex flex-column align-items-center text-center justify-content-center" style="background-image: url(/theme_ella/static/src/img/home-5-f2.jpg);">
+                                                          <div class="tc-info">
+                                                              <h5>Nancy Bayers</h5>
+                                                              <label class="font-alt">Co-founder</label>
+                                                          </div>
+                                                      </section>
+                                                      <div class="tc-text">
+                                                          <i class="fa fa-quote-right"></i>
+                                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                      </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="testimonial-box-02">
+                                                      <section class="tc-img d-flex flex-column align-items-center text-center justify-content-center" style="background-image: url(/theme_ella/static/src/img/home-5-f2.jpg);">
+                                                          <div class="tc-info">
+                                                              <h5>Nancy Bayers</h5>
+                                                              <label class="font-alt">Co-founder</label>
+                                                          </div>
+                                                      </section>
+                                                      <div class="tc-text">
+                                                          <i class="fa fa-quote-right"></i>
+                                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Testimonial 3</h6>
+                                <label class="e-sb-label" for="e_testimonials_03"><input id="e_testimonials_03" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/deal-of-day.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="deal-of-the-day" style="background-color:#ebebeb;">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-6">
+                                                    <img src="/theme_ella/static/src/img/fu-promotions.png" />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="deal-text">
+                                                        <label class="dt-price">$90</label>
+                                                        <h6>Latest offers</h6>
+                                                        <h3>Best Seller Of The Month</h3>
+                                                        <div class="dt-deal-count" id="getting-started"></div>
+                                                        <div class="dt-bts">
+                                                            <a class="as-btn as-btn-theme" href="#">View Details</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Time Count</h6>
+                                <label class="e-sb-label" for="e_day_01"><input id="e_day_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/faq.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="faq-section oe_snippet_body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="seaction-head">
+                                                        <h2>FAQ's</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div id="myCollapse" class="accordion accordion-01" role="tablist">
+                                                        <div class="card bg-white">
+                                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" data-parent="#myCollapse" class="card-header" data-original-title="" title="" aria-describedby="tooltip866397" data-target="#myCollapseTab1571637387455">Terms of service</a>
+                                                            <div class="collapse show" role="tabpanel" id="myCollapseTab1571637387455" style="">
+                                                                <div class="card-body">
+                                                                    <p class="card-text o_default_snippet_text">These terms of service ("Terms", "Agreement") are an agreement between the website ("Website operator", "us", "we" or "our") and you ("User", "you" or "your"). This Agreement sets forth the general terms and conditions of your use of this website and any of its products or services (collectively, "Website" or "Services").</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card bg-white">
+                                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" data-parent="#myCollapse" class="card-header collapsed" data-original-title="" title="" aria-describedby="tooltip866397" data-target="#myCollapseTab1571637404909">Terms of service</a>
+                                                            <div class="collapse" role="tabpanel" style="" id="myCollapseTab1571637404909">
+                                                                <div class="card-body">
+                                                                    <p class="card-text o_default_snippet_text">These terms of service ("Terms", "Agreement") are an agreement between the website ("Website operator", "us", "we" or "our") and you ("User", "you" or "your"). This Agreement sets forth the general terms and conditions of your use of this website and any of its products or services (collectively, "Website" or "Services").</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>FAQ's</h6>
+                                <label class="e-sb-label" for="e_faq_01"><input id="e_faq_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/content-img.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="content-with-img-snippet">
+                                        <div class="container-fluid">
+                                            <div class="row no-gutters">
+                                                <section class="col-lg-6 cwi-img" style="background-image:url(/theme_ella/static/src/img/two-column.jpg);"></section>
+                                                <div class="col-lg-6" style="background-color:#1e1e1d;">
+                                                    <div class="cwi-content">
+                                                        <h2>Diamond Jewellery</h2>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                                                        <div class="btn-bar">
+                                                            <a class="as-btn as-btn-t-white" href="#">This is how we select the diamonds</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Content</h6>
+                                <label class="e-sb-label" for="e_content_01"><input id="e_content_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/content-img-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="content-with-img-snippet-01">
+                                        <div class="container-fluid no-padding">
+                                            <div class="row no-gutters">
+                                                <section class="col-lg-6 min-height-250" style="background-image: url(/theme_ella/static/src/img/home-5-f2.jpg);" />
+                                                <div class="col-lg-6">
+                                                    <div class="side-feature">
+                                                        <h2 class="dark-color">We Are Doing The Great Creative Theme</h2>
+                                                        <p class="large">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                        <ul class="list-style-01">
+                                                            <li>Drag and Drop Builder</li>
+                                                            <li>1,00s of Templates Ready</li>
+                                                            <li>eCommerce Store</li>
+                                                            <li>30+ Webmaster Tools</li>
+                                                        </ul>
+                                                        <div class="btn-bar">
+                                                            <a class="as-btn as-btn-theme" href="#">Get Start</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Content</h6>
+                                <label class="e-sb-label" for="e_content_02"><input id="e_content_02" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/tab.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="collections-snippet-tabs s_tabs oe_snippet_body">
+                                        <div class="container-fluid">
+                                            <div class="row no-gutters">
+                                                <div class="col-lg-12">
+                                                    <!-- nav tab -->
+                                                    <ul class="nav nav-tabs card-header-tabs justify-content-center" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active o_default_snippet_text" id="nav_tabs_link_1" data-toggle="tab" href="#nav_tabs_content_1" role="tab" aria-controls="nav_tabs_content_1" aria-selected="true">Living Room</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link o_default_snippet_text" id="nav_tabs_link_2" data-toggle="tab" href="#nav_tabs_content_2" role="tab" aria-controls="nav_tabs_content_2" aria-selected="false">Kitchen</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link o_default_snippet_text" id="nav_tabs_link_3" data-toggle="tab" href="#nav_tabs_content_3" role="tab" aria-controls="nav_tabs_content_3" aria-selected="false">Drawing Room</a>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- / -->
+                                                    <!-- tab content -->
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane fade show active" id="nav_tabs_content_1" role="tabpanel" aria-labelledby="nav_tabs_link_1">
+                                                            <section class="bg-cover bg-no-repeat cs-tab-in" style="background-image: url(/theme_ella/static/src/img/living.jpg);">
+                                                                <div class="row screen align-items-center">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="cs-tab-text">
+                                                                            <h1>Living Room Furniture</h1>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                                            <div class="btn-bar">
+                                                                                <a href="#" class="as-btn as-btn-theme">More Collections</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="nav_tabs_content_2" role="tabpanel" aria-labelledby="nav_tabs_link_2">
+                                                            <section class="bg-cover bg-no-repeat cs-tab-in" style="background-image: url(/theme_ella/static/src/img/kitchen.jpg);">
+                                                                <div class="row screen align-items-center">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="cs-tab-text">
+                                                                            <h1>Kitchen Furniture</h1>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                                            <div class="btn-bar">
+                                                                                <a href="#" class="as-btn as-btn-theme">More Collections</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="nav_tabs_content_3" role="tabpanel" aria-labelledby="nav_tabs_link_3">
+                                                            <section style="background-image: url(/theme_ella/static/src/img/drawing.jpg);">
+                                                                <div class="row screen align-items-center">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="cs-tab-text">
+                                                                            <h1>Drawing Room Furniture</h1>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                                            <div class="btn-bar">
+                                                                                <a href="#" class="as-btn as-btn-theme">More Collections</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                    <!-- / -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Content</h6>
+                                <label class="e-sb-label" for="e_tabs_01"><input id="e_tabs_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/promo-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="promotion-snippet-01" style="background-image:url(/theme_ella/static/src/img/kids-ads-banner.jpg)">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="ps-text">
+                                                        <h3>Special Offers</h3>
+                                                        <h4>Free Shipping</h4>
+                                                        <a class="as-btn as-btn-white">Shop Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Promotions 1</h6>
+                                <label class="e-sb-label" for="e_promo_01"><input id="e_promo_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/promo-2.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="promotion-snippet-02">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <a href="#">
+                                                        <img src="/theme_ella/static/src/img/kids-ads-banner-01.jpg"/>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Promotions 2</h6>
+                                <label class="e-sb-label" for="e_promo_02"><input id="e_promo_02" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/promo-3.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="promotion-snippet-03" style="background-image:url(/theme_ella/static/src/img/sport-ads-bg-1.jpg)">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-6">
+                                                    <div class="ani-img">
+                                                        <img src="/theme_ella/static/src/img/sport-ads-1.png" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="ps-text">
+                                                        <h4>Free Shipping</h4>
+                                                        <h3>Special offers on new collections</h3>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                                        <div>
+                                                            <a class="as-btn as-btn-t-white">Shop Now</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Promotions 3</h6>
+                                <label class="e-sb-label" for="e_promo_03"><input id="e_promo_03" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/promo-4.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="promotion-snippet-04">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <section class="ps4 ps4-1" style="background-color: #efd540;">
+                                                        <a href="#">
+                                                            <img src="/theme_ella/static/src/img/sport-ps1.png" title="" align=""/>
+                                                        </a>
+                                                    </section>
+                                                    <section class="ps4 ps4-2" style="background-color: #ef4092;">
+                                                        <a href="#">
+                                                            <img src="/theme_ella/static/src/img/sport-ps2.png" title="" align=""/>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <section class="ps4 ps4-3" style="background-color: #db595b;">
+                                                        <a href="#">
+                                                            <img src="/theme_ella/static/src/img/sport-ps3.png" title="" align=""/>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Promotions 4</h6>
+                                <label class="e-sb-label" for="e_promo_04"><input id="e_promo_04" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/promo-5.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="promotion-snippet-05 section" style="background: #f7f8ff;">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-6">
+                                                    <div class="ps5-text">
+                                                        <h2>Over 2000+ items available in store</h2>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                        <div class="btn-bar">
+                                                            <a class="as-btn as-btn-theme" href="#">Shop Now</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="ps5-img">
+                                                        <img src="/theme_ella/static/src/img/sport-ad-4.png" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>Promotions 5</h6>
+                                <label class="e-sb-label" for="e_promo_05"><input id="e_promo_05" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/cta-1.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="s_parallax parallax s_parallax_is_fixed callto-action-snippet">
+                                        <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/theme_ella/static/src/img/sport-cta-bg.jpg'); background-position: 50% 75%;"></span>
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-8 text-center text-lg-left">
+                                                    <h3>Want You Get a Week of Riding For Free?</h3>
+                                                </div>
+                                                <div class="col-lg-4 text-center text-lg-right">
+                                                    <a href="#" class="as-btn as-btn-t-white">I Want It</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>CTA 1</h6>
+                                <label class="e-sb-label" for="e_cta_01"><input id="e_cta_01" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                        <div class="e_sb_snnippet_box">
+                            <div class="img">
+                                <img src="/theme_ella/static/src/icon/cta-2.jpg" />
+                            </div>
+                            <div class="snippet-as">
+                                <textarea class="sr-only snippet-textarea">
+                                    <section class="s_parallax parallax s_parallax_is_fixed callto-action-snippet-01">
+                                        <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/theme_ella/static/src/img/jewelery-cta-bg.jpg'); background-position: 50% 75%;"></span>
+                                        <div class="container">
+                                            <div class="row align-items-center justify-content-center">
+                                                <div class="col-lg-8 text-center text-lg-left">
+                                                    <div class="img-box">
+                                                        <img src="/theme_ella/static/src/img/dinamond-white.png" />
+                                                    </div>
+                                                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h3>
+                                                    <div class="btn-bar">
+                                                        <a href="#" class="as-btn as-btn-t-white">Shop Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </textarea>
+                                <h6>CTA 2</h6>
+                                <label class="e-sb-label" for="e_cta_02"><input id="e_cta_02" name="radio-snippet" type="radio"/><span/></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+            </div>
+
+        </div>
+    </t>
+</templates>

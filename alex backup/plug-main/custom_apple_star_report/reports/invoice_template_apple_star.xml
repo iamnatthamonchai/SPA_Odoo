@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="invoice_document_apple_star">
+        <t t-set="current_page"  t-value="1"/>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+        
+        <div class="header">
+            <div class="row mt32 mb32">
+                <div class="col-2">
+                    <!-- <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 100px;" /> -->
+                </div>
+                <div class="col-7 text-left" style="font:12px Sarabun !important;">
+                    <t t-if="company.branch == '00000'">
+                        <t t-set="company_name" t-value="company.name+' ( สำนักงานใหญ่ ) '"/>
+                    </t> 
+                    <!--<t t-else="">
+                        <t t-set="branch" t-value="company.branch.lstrip('0')"/>
+                        <t t-set="company_name" t-value="company.name + '( สาขาที่ '+branch+' )'"/>
+                    </t> -->
+                    <!-- <h4 style="color:#7a3b2e; padding:5px; min-height:25px;" t-esc="company_name" /> -->
+                    <span class="address-row">
+                    <!-- <span t-field="company.street" />
+                    <span t-field="company.city" />
+                    <span t-field="company.state_id.name" />
+                    <span t-field="company.zip" /> -->
+                    </span>
+                    <br/>
+                    <span class="address-row">
+                    <!-- <span>โทรศัพท์ </span><span t-field="company.phone"/> 
+                    <span>โทรสาร </span><span t-field="company.phone"/>
+                    <span>อีเมลล์ </span><span t-field="company.email"/> -->
+                    </span>
+                    <br/>
+                    <span class="address-row">
+                    
+                    </span>
+                    <br/>
+                </div>
+                <div class="col-3 text-center">
+                    
+                    
+                </div>
+            </div>
+            <div class="row mt32 mb32">
+                <div class="col-9">
+                    <div style="height:10px;"/>
+                    <div id="">
+                        
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td style="width:100%;"><small t-field="doc.partner_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="width:100%;"><small t-field="doc.partner_id.street"/></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="width:100%;">
+                                
+                                <small t-field="doc.partner_id.street2"/>
+                                <small t-field="doc.partner_id.city"/> 
+                                <small t-field="doc.partner_id.state_id.name"/>
+                                <small t-field="doc.partner_id.zip"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td><small>โทร:</small>&amp;nbsp;&amp;nbsp;<small t-field="doc.partner_id.phone"/></td>
+                            </tr>
+                            <tr>
+                            
+                                <td style="width:300px !important;">
+                    
+                                </td>
+                                <t t-if="doc.partner_id.branch == '00000'">
+                                    <td style="width:100 %;">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                    <small>สาขาที่&amp;nbsp;</small><small>(สำนักงานใหญ่)</small></td>
+                                </t>
+                                <t t-else="">
+                                    <td style="width:100 %;">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                    <small>&#009;สาขาที่&amp;nbsp;(</small><small t-field="doc.partner_id.branch"/><small>)</small></td>
+                                </t>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class=" text-left">
+                        <!-- <t t-set="invoice_date" t-value="doc.compute_full_date_thai(doc.invoice_date)"/> -->
+						<t t-set="invoice_date" />
+                        <!-- <t t-set="invoice_due_date" t-value="doc.compute_full_date_thai(doc.invoice_date_due)"/> -->
+						<t t-set="invoice_due_date" />
+                        <span t-field="company.vat" /><br/>
+                        <span><small t-field="doc.name"/></span><br/>
+                        <small></small><small t-esc="invoice_date"/><br/>
+                        <small t-esc="invoice_due_date"></small><br/>
+                        <small t-field="doc.invoice_payment_term_id"/><br/>
+                        <small t-field="doc.ref"/>
+                    </div>
+                    <div class=" text-center">
+                        
+                        
+                    </div>
+                    <div class="text-center fit-text">
+                    </div>
+                </div>
+            </div>     
+        </div>
+
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context({'lang':th_TH})" />
+                    <t t-set="item_per_page" t-value="21"/>
+                    <t t-set="start" t-value="0"/>
+                    <t t-set="end" t-value="21"/>
+                    <t t-set="total_item" t-value="len(doc.invoice_line_ids)"/>
+                    <t t-set="total_page" t-value="doc.ceil(total_item,item_per_page)"/>
+                    <t t-foreach="range(0,total_page,1)" t-as="page">
+                        <t t-set="current_page" t-value="current_page+1"/>
+                        <div class="page" style="font:12px Sarabun !important; margin:none; padding:none; ">
+                            <div class="oe_structure"/>
+                                    <table width="100%" style="height:170mm;font-size:12px;font-family:Sarabun !important;">
+                                        
+                                        <tbody>
+                                            <t t-foreach="range(0,item_per_page,1)" t-as="l">
+                                                <t t-if="(start == end) and (start == total_item -1) and (end == total_item-1)">
+                                                    <tr style="height:7.5mm !important;">
+                                                        <td class="" >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span />
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                <t t-elif="(start == end) and (end &lt; total_item)">
+                                                    <tr style="height:7mm !important; background-color: white;">
+                                                        <td class="" >
+                                                            <span style="margin-left:3px;" t-esc="start+1"/>
+                                                        </td>
+                                                        <td class="">
+                                                            <span style="margin-left:2px;" t-esc="doc.invoice_line_ids[start].product_id.default_code"/>
+                                                        </td>
+                                                        <td class="" >
+                                                            <span style="margin-left:3px;" t-field="doc.invoice_line_ids[start].name"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-field="doc.invoice_line_ids[start].quantity"/>
+                                                            <span t-field="doc.invoice_line_ids[start].product_uom_id" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-field="doc.invoice_line_ids[start].price_unit" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-field="doc.invoice_line_ids[start].discount" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-esc="'{0:,.2f}'.format(abs(doc.invoice_line_ids[start].price_subtotal))" style="margin-right:2px;"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                <t t-else="">
+                                                <tr style="height:7.5mm !important;">
+                                                    <td class="" >
+                                                        <span style="margin-left:3px;" t-esc="start+1"/>
+                                                    </td>
+                                                    <t t-if="doc.invoice_line_ids[start]">
+                                                        <td class="">
+                                                            <span style="margin-left:2px;" t-esc="doc.invoice_line_ids[start].product_id.default_code"/>
+                                                        </td>
+                                                        <td class="" >
+                                                            <span style="margin-left:3px;" t-field="doc.invoice_line_ids[start].name"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-field="doc.invoice_line_ids[start].quantity"/>
+                                                            <span t-field="doc.invoice_line_ids[start].product_uom_id" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-field="doc.invoice_line_ids[start].price_unit" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-field="doc.invoice_line_ids[start].discount" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span t-esc="'{0:,.2f}'.format(abs(doc.invoice_line_ids[start].price_subtotal))" style="margin-right:2px;"/>
+                                                        </td>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <td class="" >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right " >
+                                                            <span />
+                                                        </td>
+                                                    </t>
+                                                    
+                                                </tr>
+                                                </t>
+                                                <t t-if="start == total_item-1">
+                                                    <t t-set="start" t-value="total_item-1"/>
+                                                    <t t-set="end" t-value="total_item-1"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-set="start" t-value="start + 1"/>
+                                                </t>
+                                                <!-- <t t-set="log_start" t-value="doc.log_start(start)"/> -->
+                                                
+                                            </t>
+                                            
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <t t-set="amount_total" t-value="doc.amount_total"/>
+                                                <td colspan ="3" class="text-center" style=""><span t-esc="doc.baht_text(amount_total)"/></td>
+                                                <td colspan ="2" class=""></td>
+                                                <td colspan ="2" class="text-right "><span t-esc="'{0:,.2f}'.format(abs(doc.amount_untaxed+doc.discount_total))"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan ="3" class=""></td>
+                                                <td colspan ="2" class=""></td>
+                                                <td colspan ="2" class="text-right "><span t-esc="'{0:,.2f}'.format(abs(doc.discount_total))"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan ="3" class=""><span></span></td>
+                                                <td colspan ="2" class=""></td>
+                                                <td colspan ="2" class="text-right "><span t-esc="'{0:,.2f}'.format(abs(doc.amount_untaxed))"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan ="3" class=""></td>
+                                                <td colspan ="2" class=""></td>
+                                                <td colspan ="2" class="text-right "><span t-esc="'{0:,.2f}'.format(abs(doc.amount_tax))"/></td>
+                                            </tr>
+                                            <tr style="height:14px;">
+                                                <td colspan ="3" class="" style="height:14px;"><span></span></td>
+                                                <td colspan ="2" class="" ></td>
+                                                <td colspan ="2" class="text-right"><span t-esc="'{0:,.2f}'.format(abs(doc.amount_total))"/></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <div class="row mt32 mb32">
+                                        <div class="col-8">
+                                            <div style="height:5px;"></div>
+                                            <div class="address-row" style="margin-left:10px; padding-left:10px;">
+                                                <br/>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                        <div style="height:5px;"></div>
+                                            <div style="text-align:center;">
+                                                <br/>
+                                                <br/>
+                                                <br/>
+                                                <br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <t t-if="page == total_page-1">
+                                        <div style="height:10px;"></div>
+                                    </t>
+                                    <t t-else="">
+                                        <div style="height:380px;"></div>
+                                    </t>
+                                
+                                    
+                                </div>
+                                </t>
+                            </t>
+    </template>
+
+
+<template id="custom_report_invoice_apple_star" inherit_id="account.report_invoice_with_payments">
+  <xpath expr="//t[@t-call='web.html_container']" position="replace">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+        
+                <t t-call="custom_apple_star_report.invoice_document_apple_star" t-lang="doc.partner_id.lang"/>
+        </t>
+    </t>
+  </xpath>
+</template>
+</data>
+</odoo>

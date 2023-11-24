@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sot_view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="before">
+                <field name="type_id"/>
+            </xpath>
+            <xpath expr="//tree/field[@name='product_id']" position="before">
+                <field name="so_reference" optional="show"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]" position="attributes">
+                <attribute name="editable"/>
+                <attribute name="multi_edit">true</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//div[@name='invoice_lines']"  position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='analytic_tag_ids']"  position="after">
+                <field name="so_reference"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_inherit_form" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="after">
+                <field name="type_id"/>
+            </field>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='products']/field[@name='order_line']/tree[1]" position="attributes">
+                <attribute name="editable"/>
+                <attribute name="multi_edit">true</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//page[@name='invoices_incoming_shiptments']"  position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='product_id']" position="before">
+                <field name="po_reference" optional="show"/>
+            </xpath>
+             <xpath expr="//field[@name='order_line']/form//field[@name='analytic_tag_ids']"  position="after">
+                <field name="po_reference"/>
+            </xpath>
+        
+        </field>
+    </record>
+    <record id="purchase_stock_view_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/form//field[@name='propagate_cancel']"  position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    
+    <record id="product_template_only_form_inherit_version" model="ir.ui.view">
+        <field name="name">product.template.view.form.inherit.version</field>
+        <field name="inherit_id" ref="mrp_plm.product_template_only_form_inherit_version_plm"/>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='version']" position="replace"/>
+            <xpath expr="//field[@name='version']" position="replace"/>
+            <xpath expr="//label[@for='default_code']" position="replace">
+                <label for="version" class="oe_inline"/>
+            </xpath>
+            <xpath expr="//field[@name='default_code']" position="replace">
+                <field name="version" nolabel="1" class="oe_inline" style="width: 55% !important;"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="product_normal_form_view_inherit_version" model="ir.ui.view">
+        <field name="name">product.product.view.form.inherit.version.plm</field>
+        <field name="inherit_id" ref="mrp_plm.product_normal_form_view_inherit_version_plm"/>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='version']" position="replace"/>
+            <xpath expr="//field[@name='version']" position="replace"/>
+            <xpath expr="//label[@for='default_code']" position="replace">
+                <label for="version" class="oe_inline"/>
+            </xpath>
+            <xpath expr="//field[@name='default_code']" position="replace">
+                <field name="version" nolabel="1" class="oe_inline" style="width: 55% !important;"/>
+            </xpath>
+        </field>
+    </record> 
+    <record id="product_template_only_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.view.form.inherit</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]/label[@for='name']" position="before">
+                <label for="default_code"/>
+                    <h1>
+                        <div class="d-flex">
+                            <field class="o_text_overflow" name="default_code" placeholder="e.g. 00000000"/>
+                        </div>
+                    </h1>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_template_normal_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.normal.form.view.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form[@name='Product Template']/sheet[@name='product_form']/notebook[1]/page[@name='sales']/group[not(@name)][1]/group[@name='description']" position="replace"/>
+            <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/group[2]/group[1]" position="replace"/>
+            <xpath expr="//notebook" position="inside">
+                <page name="description" string="Description">
+                    <group>
+                         <group string="Sales Description" name="description">
+                            <field name="description_sale" nolabel="1" placeholder="This note is added to sales orders"/>
+                        </group>
+                        
+                        <group string="Purchase Description" name="purchase_description">
+                            <field name="description_purchase" nolabel="1" placeholder="This note is added to sales orders"/>
+                        </group>
+                        
+                         <group string="Invoices Description" name="invoice_description">
+                            <field name="description_invoice" nolabel="1" placeholder="This note is added to invoices."/>
+                        </group>
+                        <group string="Bills Description" name="bill_description">
+                            <field name="description_bill" nolabel="1" placeholder="This note is added to bills."/>
+                        </group>
+                        <group string="Description for Receipts">
+                            <field name="description_pickingin" nolabel="1" placeholder="This note is added to receipt orders (e.g. where to store the product in the warehouse)."/>
+                        </group>
+                        <group string="Description for Delivery Orders">
+                            <field name="description_pickingout" nolabel="1" placeholder="This note is added to delivery orders."/>
+                        </group>
+                        <group string="Description for Internal Transfers" groups="stock.group_stock_multi_locations">
+                            <field name="description_picking" placeholder="This note is added to internal transfer orders (e.g. where to pick the product in the warehouse)." nolabel="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_normal_form_inherit_view" model="ir.ui.view">
+        <field name="name">product.product.view.form.inherit</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]/label[@for='name']" position="before">
+                <label for="default_code"/>
+                    <h1>
+                        <div class="d-flex">
+                            <field class="o_text_overflow" name="default_code" placeholder="e.g. 00000000"/>
+                        </div>
+                    </h1>
+            </xpath>
+        </field>
+    </record> 
+
+    <record id="product_normal_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.normal.form.view.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form[1]/sheet[@name='product_form']/notebook[1]/page[@name='sales']/group[not(@name)][1]/group[@name='description']" position="replace"/>
+            <xpath expr="//notebook" position="inside">
+                <page name="description" string="Description">
+                    <group>
+                         <group string="Sales Description" name="description">
+                            <field name="description_sale" nolabel="1" placeholder="This note is added to sales orders"/>
+                        </group>
+                        
+                        <group string="Purchase Description" name="purchase_description">
+                            <field name="description_purchase" nolabel="1" placeholder="This note is added to sales orders"/>
+                        </group> 
+                         <group string="Invoices Description" name="invoice_description">
+                            <field name="description_invoice" nolabel="1" placeholder="This note is added to invoices."/>
+                        </group> 
+                        <group string="Description for Receipts">
+                            <field name="description_pickingin" nolabel="1" placeholder="This note is added to receipt orders (e.g. where to store the product in the warehouse)."/>
+                        </group>
+                        <group string="Description for Delivery Orders">
+                            <field name="description_pickingout" nolabel="1" placeholder="This note is added to delivery orders."/>
+                        </group>
+                        <group string="Description for Internal Transfers" groups="stock.group_stock_multi_locations">
+                            <field name="description_picking" placeholder="This note is added to internal transfer orders (e.g. where to pick the product in the warehouse)." nolabel="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_template_property_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.stock.property.form.inherit_view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[1]/page[@name='inventory']/group[not(@name)][1]" position="replace"/>
+        </field>
+    </record>
+</odoo>

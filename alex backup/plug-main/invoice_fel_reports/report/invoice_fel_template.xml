@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <template id="invoice_fel_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.basic_layout" style="position:static;">
+                        <div style="position: absolute; width:1285px; height:620px;"> 
+                          <p style="color:white;">white space</p>
+                        </div> 
+                        <div class="page container-fluid" style="font-size:13pt;">
+                            <style>
+                                .marginx {
+                                    margin-top: -1.35em;
+                                }
+                            </style>
+
+                            <template id="invoice_fel_template_layout_header">
+                                <div class="header">
+                                  <div class="col-12">
+                                    <div class="col-3 float-left" style="margin-top: 25px;">
+                                        <div class="text-center" style="margin-top: 30px; margin-left: -35px;">
+                                            <img t-att-src="'invoice_fel_reports/static/src/img/header_logo.jpg'" style="display: block; width:200px; margin-left:90px;"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-5 float-left" style="font-size:13pt; margin-top: 25px;">
+                                      <div style="margin-top: 30px;">
+                                        <p><strong><span t-field="doc.company_id.name"/></strong></p>
+                                        <p style="margin-top: -1.00em;"><span t-field="doc.company_id.street"/></p>
+                                        <p style="margin-top: -1.00em;"><strong><span t-field="doc.company_id.email"/></strong></p>
+                                        <p style="margin-top: -1.00em;"><strong>NIT: </strong><span t-field="doc.company_id.vat"/></p>
+                                      </div>
+                                    </div>
+                                    <div class="col-4 float-left">
+                                        <div class="text-center" style="margin:0 auto; font-size:13pt;">
+                                            <t t-if="doc.move_type == 'out_refund'">
+                                              <p>NOTA DE CRÉDITO</p> 
+                                            </t>
+                                            <t t-if="doc.move_type == 'out_invoice' and doc.journal_id.factura_cambiaria">
+                                              <p>FACTURA ELECTRONICA CAMBIARIA</p>
+                                            </t>
+                                            <t t-if="doc.move_type == 'out_invoice' and doc.journal_id.is_factura_especial">
+                                              <p>FACTURA ESPECIAL</p>
+                                            </t>
+                                            <t t-if="doc.move_type == 'out_invoice' and not doc.journal_id.is_factura_especial and not doc.journal_id.factura_cambiaria">
+                                              <p>FACTURA</p>
+                                            </t>
+                                            <div class="mt-2" style="margin-left:75px;">
+                                              <table class="table table-borderless">
+                                                  <thead>
+                                                    <tr>
+                                                        <td class="text-left" style="margin:0px; padding:0px; width:105px;"><strong>Serie:</strong></td>
+                                                        <td class="text-left" style="margin:0px; padding:0px;"><span t-field="doc.fel_serie"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left" style="margin:0px; padding:0px; width:105px;"><strong>No.:</strong></td>
+                                                        <td class="text-left" style="margin:0px; padding:0px;"><span t-field="doc.fel_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left" style="margin:0px; padding:0px; width:105px;"><strong>No. Interno:</strong></td>
+                                                        <td class="text-left" style="margin:0px; padding:0px;"><span t-field="doc.name"/></td>
+                                                    </tr>
+                                                  </thead>
+                                              </table>
+                                            </div>
+                                            <p style="margin-top: -0.75em;">
+                                                <strong>
+                                                    <t t-foreach="doc.frase_ids" t-as="frase">
+                                                        <span t-esc="frase.name"/><br/>
+                                                    </t>
+                                                </strong>
+                                            </p>
+                                            <p style="margin-top: -0.75em;"><strong>Fecha de la Factura: </strong><span t-field="doc.invoice_date"/></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-8 float-left">
+                                            <div>
+                                                <div class="col-12 justify-content-center" style="border: 1px solid black; border-radius: 7px;">
+                                                  <div style="padding-top: 7px; padding-bottom: 1px; padding-right: 10px; padding-left: 10px;">
+                                                    <table class="table table-borderless">
+                                                        <thead>
+                                                          <tr>
+                                                              <td style="margin:0px; padding:0px; width:180px;"><strong>Nombre:</strong></td>
+                                                              <td style="margin:0px; padding:0px;"><span t-field="doc.partner_id"/></td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td style="margin:0px; padding:0px; width:180px;"><strong>Dirección:</strong></td>
+                                                              <td style="margin:0px; padding:0px;"><span t-field="doc.partner_id.street"/> <span t-field="doc.partner_id.state_id"/> <span t-field="doc.partner_id.country_id"/></td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td style="margin:0px; padding:0px; width:180px;"><strong>NIT:</strong></td>
+                                                              <td style="margin:0px; padding:0px;"><span t-field="doc.partner_id.vat"/></td>
+                                                          </tr>
+                                                        </thead>
+                                                    </table>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>  
+                            </template>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <table class="table table-borderless col-12" style="font-size:14pt;">
+                                        <thead style="border: 2px solid #5181BD; font-size:18pt; color:white; border-radius: 20px; background-color:black;">
+                                            <tr>
+                                                <th class="text-center" style="margin:5px; padding:5px;">Cantidad</th>
+                                                <th class="text-center" style="margin:5px; padding:5px;">Descripción</th>
+                                                <th class="text-center" style="margin:5px; padding:5px; width:180px;">Precio Unitario</th>
+                                                <th class="text-center" style="margin:5px; padding:5px; width:180px;">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="doc.invoice_line_ids" t-as="jojo">
+                                                <tr>
+                                                    <td class="text-center" style="margin:2px; padding:2px;"><span t-field="jojo.quantity"/></td>
+                                                    <td class="text-center" style="margin:2px; padding:2px;">
+                                                      <span t-field="jojo.name"/> <span t-field="jojo.product_uom_id"/>
+                                                    </td>
+                                                    <td class="text-center" style="margin:2px; padding:2px;"><span t-field="doc.currency_id.symbol"/> <span t-esc="'{:,.2f}'.format(jojo.price_unit)"/></td>
+                                                    <td class="text-center" style="margin:2px; padding:2px;"><span t-field="doc.currency_id.symbol"/> <span t-esc="'{:,.2f}'.format(jojo.price_total)"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <span t-field="doc.narration"/>
+                                </div>
+                            </div>
+                            
+                            <template id="invoice_fel_footer_invoice_template">
+                                <div t-attf-class="footer" style="border-bottom: 2px solid #B4B4B4; border-right: 2px solid #B4B4B4; border-left: 2px solid #B4B4B4;">
+                                    
+                                    <div class="row mt-4">
+                                      <div class="col-12">
+                                        <div class="col-12">
+                                            <table class="table table-borderless col-12" style="font-size:15pt;">
+                                                <thead style="border: 2px solid #5181BD;">
+                                                    <tr>
+                                                        <td style="margin:5px; padding:5px;"><strong>TOTAL EN LETRAS:</strong> <span t-esc="(doc.text_amount)"/></td>
+                                                        <td class="text-center" style="margin:5px; padding:5px; width:180px; background-color:black; color: white;"><strong>Total</strong></td>
+                                                        <td class="text-center" style="margin:5px; padding:5px; width:180px;"><span t-field="doc.amount_total"/></td>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                    <p style="color:white;">white space</p>
+
+                                    
+                                    <div class="row" style="font-size:15pt;">
+                                      <div class="col-12">
+                                        <div class="col-12 text-center" style="background-color:black; color: white; border: 2px solid #5181BD;">
+                                            <b>CERTIFICADOR</b>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row mt-1 mb-1" style="font-size:13pt;">
+                                      <div class="col-12">
+                                        <div class="col-12 text-center">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="text-left"><span style="font-weight:bold;">No. AUTORIZACION: </span> <span style="font-weight:normal;" t-field="doc.uuid"/></td>
+                                                    <td class="text-left"><span style="font-weight:bold;">MEGAPRINT, S.A.</span> NIT: 50510231</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-left"><span style="font-weight:bold;">FECHA CERTIFICACIÓN</span> <span style="font-weight:normal;" t-field="doc.invoice_date"/> </td>
+                                                </tr>
+                                            </table>
+
+                                            <br/>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                </div>
+                            </template>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+    
+</odoo>

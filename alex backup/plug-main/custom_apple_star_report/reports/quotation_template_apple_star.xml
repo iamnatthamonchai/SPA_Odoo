@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="quotation_document_apple_star">
+        <t t-set="current_page"  t-value="1"/>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+        <div class="header">
+            <div class="row mt32 mb32">
+                <div class="col-2">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 100px;" />
+                </div>
+                <div class="col-7 text-left" style="font:12px Sarabun !important;">
+                    <t t-if="company.branch == '00000'">
+                        <t t-set="company_name" t-value="company.name+' ( สำนักงานใหญ่ ) '"/>
+                    </t> 
+                    <t t-else="">
+                        <t t-set="branch" t-value="company.branch.lstrip('0')"/>
+                        <t t-set="company_name" t-value="company.name + '( สาขาที่ '+branch+' )'"/>
+                    </t>
+                    <h4 style="color:#7a3b2e; padding:5px; min-height:25px;" t-esc="company_name" />
+                    <span class="address-row">
+                    <span t-field="company.street" />
+                    <span t-field="company.city" />
+                    <span t-field="company.state_id.name" />
+                    <span t-field="company.zip" />
+                    </span>
+                    <br/>
+                    <span class="address-row">
+                    <span>โทรศัพท์ </span><span t-field="company.phone"/> 
+                    <span>โทรสาร </span><span t-field="company.phone"/>
+                    <span>อีเมลล์ </span><span t-field="company.email"/>
+                    </span>
+                    <br/>
+                    <span class="address-row">
+                    <span>เลขประจำตัวผู้เสียภาษี : </span><span t-field="company.vat" />
+                    </span>
+                    <br/>
+                </div>
+                <div class="col-3 text-center">
+                    <t t-if="doc.state in ['draft','sent']">
+                        <span class="text-center"><small>เลขที่ใบเสนอราคา : </small><small t-field="doc.name"/></span>
+                        <span><img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', doc.name, 200, 50)" style="width:200px;height:50px; margin-left:-10px;"/></span>
+                        <br/>
+                        <small class="text-center">ใบเสนอราคา</small>
+                        <br/>
+                        <small class="text-center">หน้าที่ <small class="page"/></small>
+                    </t>
+                    <t t-else="">
+                        <span class="text-center"><small>เลขที่ใบสั่งขาย : </small><small t-field="doc.name"/></span>
+                        <span><img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', doc.name, 200, 50)" style="width:200px;height:50px; margin-left:-10px;"/></span>
+                        <br/>
+                        <small class="text-center">ใบสั่งขาย</small>
+                        <br/>
+                        <small class="text-center">หน้าที่ <small class="page"/></small>
+                    </t>
+                    
+                </div>
+            </div>
+            <div class="row mt32 mb32">
+                <div class="col-9">
+                    <div style="height:10px;"/>
+                    <div id="customer_border">
+                        <table>
+                            <tr>
+                                <td style="width:200px;"><small>นามลูกค้า</small></td>
+                                <td style="width:80%;">&amp;nbsp;&amp;nbsp;<small t-field="doc.partner_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width:200px;"><small>สาขาที่</small></td>
+                                <t t-if="doc.partner_id.branch == '00000'">
+                                    <td>&amp;nbsp;&amp;nbsp;<small>( สำนักงานใหญ่ )</small></td>
+                                </t>
+                                <t t-else="">
+                                    <td>&amp;nbsp;&amp;nbsp;<small t-esc="doc.partner_id.branch"/></td>
+                                </t>
+                                
+                            </tr>
+                            <tr>
+                                <td style="width:200px;"><small>เลขประจำตัวผู้เสียภาษี</small></td>
+                                <td>&amp;nbsp;&amp;nbsp;<small t-field="doc.partner_id.vat"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width:200px;"><small>ที่อยู่</small></td>
+                                <td style="width:80%;">&amp;nbsp;&amp;nbsp;<small t-field="doc.partner_id.street"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width:200px;"><br/></td>
+                                <td style="width:80%;">&amp;nbsp;
+                                    <small t-field="doc.partner_id.city"/> 
+                                    <small t-field="doc.partner_id.state_id.name"/>
+                                    <small t-field="doc.partner_id.zip"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:100px;"><small>โทร</small></td>
+                                <td>&amp;nbsp;&amp;nbsp;<small t-field="doc.partner_id.phone"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="document_border text-center">
+                        <t t-set="date_order" t-value="doc.compute_full_date_thai(doc.date_order)"/>
+                        <small>วันที่&amp;nbsp;&amp;nbsp;</small><small t-esc="date_order"/><br/>
+                        <small>การชำระเงิน&amp;nbsp;&amp;nbsp;</small>
+                        <small>ชำระ 100 % ในวันจัดส่ง</small>
+                        <!-- <small t-field="doc.payment_term_id"/> -->
+                    </div>
+                    <div class="document_border text-center">
+                        <t t-if="doc.validity_date">
+                            <t t-set="validity_date" t-value="doc.compute_full_date_thai(doc.validity_date)"/>
+                            <small style="font-size:12px !important;">กำหนดยืนราคาถึงวันที่</small><br/>
+                            <small style="font-size:12px !important;" t-esc="validity_date"></small>
+                        </t>
+                        <t t-else="">
+                            <small style="font-size:12px !important;">กำหนดยืนราคาถึงวันที่</small><br/>
+                            <small></small>
+                        </t>  
+                    </div>
+                    <div class="document_border text-center fit-text">
+                        <small>การจัดส่งสินค้า</small><br/>
+                        <small style="font-size:10px !important;">ใช้เวลาในการผลิต 90 วันทำการหลังจากได้รับใบสั่ง</small>
+                    </div>
+                </div>
+            </div>     
+        </div>
+
+                <t t-call="custom_apple_star_report.blank_layout">
+                    <t t-set="doc" t-value="doc.with_context({'lang':th_TH})" />
+                    <t t-set="item_per_page" t-value="21"/>
+                    <t t-set="start" t-value="0"/>
+                    <t t-set="end" t-value="21"/>
+                    <t t-set="total_item" t-value="len(doc.order_line)"/>
+                    <t t-set="total_page" t-value="doc.ceil(total_item,item_per_page)"/>
+                    <t t-foreach="range(0,total_page,1)" t-as="page">
+                        <t t-set="current_page" t-value="current_page+1"/>
+                        <!-- <div style="height:280px;"></div> -->
+            
+                        <div class="page" style="font:12px Sarabun !important; margin:none; padding:none; ">
+                            <div class="oe_structure"/>
+                                    <table width="100%" style="height:180mm;font-size:12px;font-family:Sarabun !important;">
+                                        <thead>
+                                            <tr style="border:1px solid black; ">
+                                                <th style="border:1px solid black; " class="text-center">ลำดับที่<br/>No.</th>
+                                                <th style="border:1px solid black; " class="text-center">รหัส<br/>(SKU)</th>
+                                                <th style="border:1px solid black; " class="text-center">รายการ<br/>Description</th>
+                                                <th style="border:1px solid black; " class="text-center">จำนวน<br/>Quantity</th>
+                                                <th style="border:1px solid black; " class="text-center">ราคาต่อหน่วย<br/>Price</th>
+                                                <th style="border:1px solid black; " class="text-center" >ส่วนลด(%)<br/>Discount(%)</th>
+                                                <th style="border:1px solid black; " class="text-center">ยอดรวม<br/>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="range(0,item_per_page,1)" t-as="l">
+                                                <t t-if="(start == end) and (start == total_item -1) and (end == total_item-1)">
+                                                    <tr style="height:7mm !important; background-color: white;">
+                                                        <td class="border-left-right" >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="border-left-right">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="border-left-right">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span />
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                
+                                                <t t-elif="(start == end) and (end &lt; total_item)">
+                                                    <tr style="height:7mm !important; background-color: white;">
+                                                        <td class="border-left-right" >
+                                                            <span style="margin-left:3px;" t-esc="start+1"/>
+                                                        </td>
+                                                        <td class="border-left-right">
+                                                            <span style="margin-left:2px;" t-esc="doc.order_line[start].product_id.default_code"/>
+                                                        </td>
+                                                        <td class="border-left-right" >
+                                                            <span style="margin-left:3px;" t-field="doc.order_line[start].name"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-field="doc.order_line[start].product_uom_qty"/>
+                                                            <span t-field="doc.order_line[start].product_uom" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-field="doc.order_line[start].price_unit" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-field="doc.order_line[start].discount" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-esc="'{0:,.2f}'.format(abs(doc.order_line[start].price_subtotal))" style="margin-right:2px;"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                
+                                                <t t-else="">
+                                                <tr style="background-color: white;">
+                                                    <td class="border-left-right" >
+                                                        <span style="margin-left:3px;" t-esc="start+1"/>
+                                                    </td>
+                                                    <t t-if="doc.order_line[start]">
+                                                        <td class="border-left-right">
+                                                            <span style="margin-left:2px;" t-esc="doc.order_line[start].product_id.default_code"/>
+                                                        </td>
+                                                        <td class="border-left-right" >
+                                                            <span style="margin-left:3px;" t-field="doc.order_line[start].name"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-field="doc.order_line[start].product_uom_qty"/>
+                                                            <span t-field="doc.order_line[start].product_uom" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-field="doc.order_line[start].price_unit" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-field="doc.order_line[start].discount" style="margin-right:2px;"/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span t-esc="'{0:,.2f}'.format(abs(doc.order_line[start].price_subtotal))" style="margin-right:2px;"/>
+                                                        </td>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <td class="border-left-right" >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="border-left-right">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="border-left-right">
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span/>
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span />
+                                                        </td>
+                                                        <td class="text-right border-left-right" >
+                                                            <span />
+                                                        </td>
+                                                    </t>
+                                                    
+                                                </tr>
+                                                </t>
+                                                <t t-if="start == total_item-1">
+                                                    <t t-set="start" t-value="total_item-1"/>
+                                                    <t t-set="end" t-value="total_item-1"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-set="start" t-value="start + 1"/>
+                                                </t>
+                                                <!-- <t t-set="log_start" t-value="doc.log_start(start)"/> -->
+                                                
+                                            </t>
+                                            
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <t t-set="amount_total" t-value="doc.amount_total"/>
+                                                <td colspan ="3" class="border-round text-center" style="background-color:#7a3b2e; color:white"><span t-esc="doc.baht_text(amount_total)"/></td>
+                                                <td colspan ="2" class="border-round">รวมเป็นเงิน (บาท)</td>
+                                                <td colspan ="2" class="text-right border-round"><span t-esc="'{0:,.2f}'.format(abs(doc.amount_untaxed+doc.discount_total))"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan ="3" class="border-left-right"><span>หมายเหตุ</span></td>
+                                                <td colspan ="2" class="border-round">หักส่วนลด (บาท)</td>
+                                                <td colspan ="2" class="text-right border-round"><span t-esc="'{0:,.2f}'.format(abs(doc.discount_total))"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan ="3" class="border-left-right"><span>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;กรุณาโอนเงินเข้าบัญชี ธนาคารกสิกรไทย</span></td>
+                                                <td colspan ="2" class="border-round">ราคาสินค้าไม่รวมภาษี (บาท)</td>
+                                                <td colspan ="2" class="text-right border-round"><span t-esc="'{0:,.2f}'.format(abs(doc.amount_untaxed))"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan ="3" class="border-left-right"><span>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ชื่อบัญชี บริษัท แอปเปิ้ล สตาร์ จำกัด เลขที่บัญชี 770-101-6666</span></td>
+                                                <td colspan ="2" class="border-round">จำนวนภาษีมูลค่าเพิ่ม  7%</td>
+                                                <td colspan ="2" class="text-right border-round"><span t-esc="'{0:,.2f}'.format(abs(doc.amount_tax))"/></td>
+                                            </tr>
+                                            <tr style="height:14px;">
+                                                <td colspan ="3" class="border-left-right-bottom" style="height:14px;"><span>ผู้เสนอราคา </span>&amp;nbsp;&amp;nbsp;&amp;nbsp;<span t-esc="doc.user_id.name"/>  &amp;nbsp;&amp;nbsp;&amp;nbsp;<span>สกุลเงินที่เสนอ </span>&amp;nbsp;&amp;nbsp;<span t-esc="doc.currency_id.name"/></td>
+                                                <td colspan ="2" class="border-round" style="color:#7a3b2e;">จำนวนเงินรวมทั้งสิ้น (บาท)</td>
+                                                <td colspan ="2" class="text-right border-round" style="color:#7a3b2e;"><span t-esc="'{0:,.2f}'.format(abs(doc.amount_total))"/></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <div class="row mt32 mb32">
+                                        <div class="col-8">
+                                            <div style="height:5px;"></div>
+                                            <div id="confirm_border" class="address-row" style="margin-left:10px; padding-left:10px;">
+                                                <br/>
+                                                <span style="margin-left:30px">ยืนยันการสั่งซื้อตามรายละเอียดข้างต้นโดย</span><br/><br/>
+                                                <span style="margin-left:30px">ลายเซ็น............................................................................................................</span><br/><br/>
+                                                <span style="margin-left:30px">ชื่อ....................................................................................................................</span><br/><br/>
+                                                <span style="margin-left:30px">ตำแหน่ง..........................................................................................................</span><br/><br/>
+                                                <span style="margin-left:30px">วันที่.................................................................................................................</span><br/>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                        <div style="height:5px;"></div>
+                                            <div id="company_stamp_border" style="text-align:center;">
+                                                <br/>
+                                                <br/>
+                                                <br/>
+                                                <br/>
+                                                <span style="color:grey;font-size:16px;">ตราประทับบริษัท (ถ้ามี)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <t t-if="page &gt; 0"> -->
+                                    <t t-if="page == total_page-1">
+                                        <div style="height:10px;"></div>
+                                    </t>
+                                    <t t-else="">
+                                        <div style="height:380px;"></div>
+                                    </t>
+                                        
+                                    <!-- </t>                                                                         -->
+                                    <!-- <t t-if="page == 0">
+                                        <div style="height:95px;">
+                                        </div> 
+                                    </t>
+                                    <t t-if="page == 1">
+                                        <div style="height:50px;">
+                                        </div> 
+                                    </t>
+                                    <t t-else="">
+                                    </t> -->
+                                
+                                    
+                                </div>
+                                </t>
+                            </t>
+    </template>
+
+
+<template id="custom_report_saleorder_apple_star" inherit_id="sale.report_saleorder">
+  <xpath expr="//t[@t-call='web.html_container']" position="replace">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+                <t t-call="custom_apple_star_report.quotation_document_apple_star" t-lang="doc.partner_id.lang"/>
+        </t>
+    </t>
+  </xpath>
+</template>
+</data>
+</odoo>

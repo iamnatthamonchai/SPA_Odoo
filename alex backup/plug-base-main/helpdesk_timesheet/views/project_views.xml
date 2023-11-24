@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="project_project_action_view_helpdesk_tickets" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph,activity</field>
+        <field name="search_view_id" ref="helpdesk_ticket_view_search_inherit_helpdesk_timesheet"/>
+        <field name="context">{'default_project_id': active_id, 'create': False}</field>
+        <field name="domain">[('project_id', '=', active_id)]</field>
+    </record>
+
+   <record id="project_project_view_form_inherit_helpdesk_timesheet" model="ir.ui.view">
+        <field name="name">project.form.inherit.helpdesk.timesheet</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="priority">30</field>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_analytic_account_entries']" position="after">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="action_open_project_tickets"
+                    context="{'default_project_id': active_id}"
+                    icon="fa-life-ring"
+                    attrs="{'invisible': [('ticket_count', '=', 0)]}">
+                    <field name="ticket_count" string="Tickets" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+        <field name="groups_id" eval="[(4, ref('helpdesk.group_helpdesk_user'))]"/>
+   </record>
+
+</odoo>

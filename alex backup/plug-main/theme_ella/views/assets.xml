@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="editor_theme_ella" name="Theme Ella Editor Assets" inherit_id="website.assets_editor">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/theme_ella/static/src/js/widget/theme.js" />
+        </xpath>
+    </template>
+    <template id="assent_front" name="Theme Ella Front Assets" inherit_id="website.assets_frontend" priority="18">
+        <xpath expr="." position="inside">
+            <!-- SCSS File -->
+            <link href="/theme_ella/static/src/scss/as_variables.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_mixin.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_typography.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_grid.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_buttons.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_custom.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_snippets.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_products-snippet.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_products_details.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_header_a.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_custom-option.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_section.scss" rel="stylesheet" type="text/scss" />
+            <link href="/theme_ella/static/src/scss/as_color.scss" rel="stylesheet" type="text/scss" />
+            <!-- CSS File -->
+            <link href="/theme_ella/static/src/fonts/themify-icons.css" rel="stylesheet" />
+        </xpath>
+    </template>
+</odoo>

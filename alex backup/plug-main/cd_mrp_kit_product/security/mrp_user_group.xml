@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_mrp_access">
+            <field name="name">MRP Access</field>
+            <field name="sequence">204</field>
+        </record>
+        <record id="mrp_allow_access" model="res.groups">
+            <field name="name">Allow MRP MNU?</field>
+            <field name="category_id" ref="cd_mrp_kit_product.module_mrp_access"/>
+        </record>
+
+    </data>
+</odoo>

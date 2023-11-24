@@ -1,0 +1,395 @@
+<odoo>
+  <data>
+
+<template id='external_layout_standard_purchase_request'>
+  <div class="header">
+    <!-- <div class="row">
+    </div>
+    <div class="row">
+      <div class="col-12 mb4">
+          <center>  
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="margin-top:50px;height:100px;width:150px;" alt="Logo"/>
+          </center>
+        </div>
+      </div>
+    </div> -->
+  </div>
+    <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+        <t t-call="web.address_layout"/>
+        <t t-raw="0" />
+    </div>
+
+    <div class="footer o_standard_footer">
+    </div>
+</template>
+    <!-- <template id="external_layout_blank_header_footer_purchase">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-esc="company.update_scss()"/>
+        <t t-call="thaidev_purchase.external_layout_standard_blank_header_footer_purchase"><t t-raw="0"/></t>
+    </template> -->
+
+    <template id="report_purchase_request">
+      <t t-set="company" t-value="o.company_id.sudo()"/>
+      <t t-call="thaidev_purchase.external_layout_standard_purchase_request"> 
+        <t t-foreach="range(2)" t-as="_page">
+          <t t-set="i" t-value="0"/>
+          <t t-set="dis" t-value="0"/>
+          <t t-set="pri" t-value="0"/>
+          
+           <div class="page SarabunRegular">
+             
+              <table style="width: 100%;" class="table table-sm o_main_table" name="invoice_line_table">
+                  <thead>
+                      <tr>
+                          <th style="width: 5%;"></th>
+                          <th style="width: 40%;"></th>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 15%;"></th>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 10%;"></th>
+                      </tr>
+                      <tr>
+                          <td colspan="7" style="border-left: 1px solid black; border-top: 1px solid black;border-right: 1px solid black;">
+                              <table style="width: 100%;">
+                              <!-- <tr>
+                                  <th style="width: 5%;"></th>
+                                  <th style="width: 45%;"></th>
+                                  <th style="width: 15%;"></th>
+                                  <th style="width: 5%;"></th>
+                                  <th style="width: 10%;"></th>
+                                  <th style="width: 10%;"></th>
+                                  <th style="width: 10%;"></th>
+                                </tr>   -->
+
+                        <tr>
+                          <td colspan="3">
+                              <h4><span t-field="o.company_id.name"/></h4>
+                              <p><span t-field="o.company_id.street"/> <span t-field="o.company_id.street2"/></p>
+                              <p><span t-field="o.company_id.city"/> <span t-field="o.company_id.state_id.name"/> <span t-esc="o.company_id.country_id.name"/></p>
+                              <!-- <center><img style='top:0;' t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" class='text-right' height='50px' width='50px;' alt="Logo"/></center> -->
+                          </td>
+                          <!-- <td colspan='2' style='border-top: 1px solid black;'>
+                            <span><img style='float:right;' t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" class='text-right' height='80px' width='120px;' alt="Logo"/></span>
+                          </td> -->
+                          <td colspan="1">
+                                <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" height='100px;' style='float:left;' width='300px;' alt="Logo"/>
+                              
+                          </td>
+                          <td class="SarabunBold text-right" colspan="3">
+                              <h4>Purchase Request</h4>
+                              <t t-if="_page == 0">  
+                                  <p>Company Original</p>
+                              </t>            
+                              <t t-if="_page == 1">  
+                                  <p>Company Copy</p>     
+                              </t> 
+                             <!--  <t t-if="_page == 2">  
+                                  <p>Customer Original</p>     
+                              </t> 
+                              <t t-if="_page == 3">  
+                                  <p>Customer Copy</p>     
+                              </t> 
+                              <t t-if="_page == 4">  
+                                  <p>Accounting Original</p>     
+                              </t>     -->                                        
+                          </td>
+                      </tr>           
+                              </table>                         
+                          </td>
+                      </tr>
+                      
+                      
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black; " >
+                              <div style="width: 100%; ">
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:left;">
+                                      Tax Number : <span t-field="o.company_id.vat"/>
+                                  </div>
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:right; ">
+                                      Place Of Issue : <span t-field="o.company_id.branch"/>
+                                  </div>
+                              </div>
+                          </td>
+                          <td colspan="3" style=" border-right: 1px solid black;">
+                              <!-- div>
+                                  <div style="display: inline-block; margin: 0; float:right;" >
+                                      Page     
+                                  </div>
+                              </div -->
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black; border-top: 1px solid black; " >
+                              Requested by: <span t-field="o.requested_by.name"/>
+                          </td>
+                          <td colspan="3" t-attf-style="background-color: #{invcolour}; border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;">
+                              Purchase Request : <span t-field="o.name"/>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black; " >
+                              Address : <span t-field="o.requested_by.street"/> <span t-field="o.requested_by.street2"/> <span t-field="o.requested_by.city"/> <span t-esc="o.requested_by.country_id.name"/>
+                          </td>
+                          <td colspan="3" style="border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black;">
+                              Date : <span t-field="o.date_start"/>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black; " >
+                              <div style="width: 100%; ">
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:left;">
+                                      Tax No : <span t-field="o.requested_by.vat"/>
+                                  </div>
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:right; ">
+                                      Branch No : <span t-field="o.requested_by.branch"/>
+                                  </div>
+                              </div>
+                          </td>
+                          <td colspan="3" style="border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;">
+                              Tax Rate : 
+                          </td>
+                      </tr>
+                      <tr>                                
+                          <th name="th_description" class="text-left" t-attf-style="background-color: #{invcolour}; width: 5%;border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;"><span>Item</span></th>
+                          <th name="th_description" colspan='2'  class="text-left" t-attf-style="background-color: #{invcolour}; width: 60%;border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;" ><span>Description</span></th>
+                          <!-- <th name="th_description" class="text-left" t-attf-style="background-color: #{invcolour}; width: 55%;border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;"><span>Analytic Account</span></th> -->
+                          <th name="th_price_unit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}" t-attf-style="background-color: #{invcolour}; width: 15%;border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;">
+                              <span>Requested Date</span>
+                          </th>
+
+                          <th name="th_quantity" class="text-right" t-attf-style="background-color: #{invcolour}; width: 5% !important;border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;"><span>Units</span></th>
+                          <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}" t-attf-style="background-color: #{invcolour}; width: 10%;border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;"><span>Estimated Cost</span></th>
+                          
+                          <th name="th_subtotal" class="text-right" t-attf-style="background-color: #{invcolour}; width: 10%;border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black;">
+                              <span >Specifications</span>
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody class="invoice_tbody">
+                      <t t-set="current_subtotal" t-value="0"/>
+
+                      <t t-foreach="o.line_ids" t-as="line">
+                          <t t-set="i" t-value="i+1"/>
+                         <!--  <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                          <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/> -->
+                          <!-- <t t-set="dis" t-value="dis + (line.price_unit * line.quantity * (line.discount / 100.0))"/>
+                          <t t-set="pri" t-value="pri + (line.price_unit * line.quantity)"/> -->
+                          <!-- <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                          <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/> -->
+                          <tr class="'bg-200 o_line_section'">                 
+                              <td name="account_invoice_line_no" style="border-left: 1px solid black; border-right: 1px solid black;"><span t-esc="i"/></td>
+                              <td colspan='2' name="purcahse_request_line_name" style="border-right: 1px solid black;"><span t-field="line.name"/></td>
+                              <!-- <td name="account_invoice_line_name" style="border-right: 1px solid black;"><span t-field="line.analytic_account_id.name"/></td> -->
+                               <td  t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}" style="border-right: 1px solid black;">
+                                  <span t-esc="line.date_start"/>
+                              </td>       
+                              <td class="text-right" style="border-right: 1px solid black;">
+                                  <span t-esc="line.product_qty"/>
+                              </td>
+                              <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}" style="border-right: 1px solid black;">
+                                  <span t-field="line.estimated_cost"/>
+                              </td>
+                                                              
+                              <td class="text-right o_price_total" style="border-right: 1px solid black;">
+                                  <span t-field="line.specifications"/>                                            
+                              </td>      
+                          </tr>                            
+                      </t>
+                      <t t-if="len(o.line_ids) &lt; 10">  
+                        <t t-foreach="range(10 - len(o.line_ids))" t-as="l">
+                            <t t-set="i" t-value="i+1"/>
+                            <tr class="'bg-200 o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">                                    
+                                <td  style="border-left: 1px solid black; border-right: 1px solid black;"><span t-esc="i"/></td>
+                                <td colspan='2' style="border-right: 1px solid black;"></td>
+                                <td  style="border-right: 1px solid black;"></td>
+                                <td class="text-right" style="border-right: 1px solid black;"></td>
+                                <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}" style="border-right: 1px solid black;"></td>
+                                <td  t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}" style="border-right: 1px solid black;"></td>                                        
+                                <!-- <td class="text-right o_price_total" style="border-right: 1px solid black;"></td> -->      
+                            </tr> 
+                        </t>     
+                      </t>
+                     <!--  <tr>
+                          <td colspan="4" style="border-left: 1px solid black; border-top: 1px solid black;" > </td>
+                          <td colspan="2" style="border-left: 1px solid black; border-top: 1px solid black;" >
+                              Price : 
+                          </td>
+                          <td colspan="1" style="border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;">
+                              <span t-field="o.amount_untaxed"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black;" > </td>
+                          <td colspan="2" style="border-left: 1px solid black; border-top: 1px solid black;" >
+                              Taxes : 
+                          </td>
+                          <td colspan="1" style="text-align:right; border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;">
+                              <span t-field="o.amount_tax"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black; border-top: 1px solid black;" > 
+                              Reference : <span t-field="o.partner_ref"/>
+                          </td>
+                          <td colspan="2" style="border-left: 1px solid black; border-top: 1px solid black;" >
+                              Price of Taxes: 
+                          </td>
+                          <td colspan="1" style="text-align:right; border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;">
+                              <span t-field="o.amount_untaxed"/>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black; border-top: 1px solid black;" >   
+                              Amount in words                           
+                          </td>
+                          
+                          <td colspan="2" style="border-left: 1px solid black; border-top: 1px solid black;" >
+                              V A T :
+                          </td>
+                          <td colspan="1" style="text-align:right; border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;">
+                              <span t-field="o.amount_tax"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                          </td>
+                      </tr> -->
+                      <!-- <tr>
+                          <td colspan="4" style="border-left: 1px solid black;" >  
+                              <span t-esc="o.amount_text(o.amount_total)"/>      
+                          </td>
+                          <td colspan="2" style="border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;" >
+                              Total :
+                          </td>
+                          <td colspan="1" t-attf-style="background-color: #{invcolour}; border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;">
+                              <span t-field="o.amount_total"/>
+                          </td>
+                          
+                      </tr> -->
+                      <!-- <tr>
+                          <td colspan="4" style="border-left: 1px solid black; border-top: 1px solid black;" >    
+                              Internat Note : <span t-field="o.notes"/>                                
+                          </td>
+                          <td colspan="3" style="border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black;" >
+                              Purchase Representative
+                          </td>                                
+                      </tr> -->
+                      <tr style="height:40px;">
+                          <td colspan="4" style="border-left: 1px solid black;" >
+                              <div style="width: 100%; ">
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:left;">
+                                      <span> </span>
+                                  </div>
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:right; ">
+                                      <span> </span>
+                                  </div>
+                              </div>
+                          </td>
+                          <td colspan="3" style="border-left: 1px solid black; border-right: 1px solid black;">
+                              <div>
+                                  <div style="display: inline-block; margin: 0; float:left;" >
+                                      <span> </span>                                
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black;" >
+                              <div style="width: 100%; ">
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:left;">
+                                      ...............................
+                                  </div>
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:right; ">
+                                      ...............................
+                                  </div>
+                              </div>
+                          </td>
+                          <td colspan="3" style="border-left: 1px solid black; border-right: 1px solid black;">
+                              <div>
+                                  <div style="display: inline-block; margin: 0; float:left;" >
+                                      ...............................                                
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>                            
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black;" >
+                              <div style="width: 100%; ">
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:left;">
+                                      Signature of Receiver
+                                  </div>
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:right; ">
+                                      Signature of Sender
+                                  </div>
+                              </div>
+                          </td>
+                          <td colspan="3" style="border-left: 1px solid black; border-right: 1px solid black;">
+                              <div>
+                                  <div style="display: inline-block; margin: 0; float:left;" >
+                                      Signature of Accounting                                
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4" style="border-left: 1px solid black; border-bottom: 1px solid black;" >
+                              <div style="width: 100%; ">
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:left;">
+                                      ......../......./..............
+                                  </div>
+                                  <div style="width: 50%; display: inline-block; margin: 0; float:right; ">
+                                      ......../......./..............
+                                  </div>
+                              </div>
+                          </td>
+                          <td colspan="3" style="border-left: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black;">
+                              <div>
+                                  <div style="display: inline-block; margin: 0; float:left;" >
+                                      ......../......./..............                                
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>                                     
+          </div>
+        </t> 
+      </t>
+    </template>
+
+    <template id="request_purchase">
+        <t t-call="web.html_container">
+            <t t-set="data_report_margin_top" t-value="10"/>
+            <t t-foreach="docs" t-as="o">
+                <!-- <h2><span t-field="o.name"/></h2> -->
+               <!--  <t t-set="lang" t-value="o.invoice_user_id.lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/> -->
+                <!-- <t t-call="thaidev_invoice1.report_invoice1_document" t-lang="lang"/> -->
+                <t t-call="thaidev_purchase.report_purchase_request" t-lang="o.requested_by.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="purchase_request_receipt"
+            model="purchase.request"
+            string="WeCarDealor Purchase request"
+            report_type="qweb-pdf"
+            name="thaidev_purchase.request_purchase"
+            file="thaidev_purchase.request_purchase"
+            print_report_name="('Purchase Request - %s' % (object.name))"
+        />
+  </data>
+</odoo>

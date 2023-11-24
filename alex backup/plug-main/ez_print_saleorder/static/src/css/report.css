@@ -1,0 +1,14 @@
+@font-face
+{
+    font-family: Sarabun;
+    src: local('United'), url("/ez_print_saleorder/static/THSarabun.ttf") format('truetype');
+}
+@font-face
+{
+    font-family: CSChatThai;
+    src: local('United'), url("/ez_print_saleorder/static/src/fonts/CSChatThai/CSChatThai.ttf") format('truetype');
+}
+* {
+    font-size: 16pt;
+    font-family: 'CSChatThai' !important;
+}

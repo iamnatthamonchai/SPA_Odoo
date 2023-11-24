@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="action_report_sale_order"
+            string="Quotation / SO Hokuto Style"
+            model="sale.order" 
+            report_type="qweb-html"
+            file="hokuto_report.report_sale_order_hokuto" 
+            name="hokuto_report.report_sale_order_hokuto"
+            print_report_name="'%s_%s' % (object.name, object.partner_id.name)"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,143 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* thaidev_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-30 10:40+0000\n"
+"PO-Revision-Date: 2020-10-22 00:05+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: th\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "<span>Amount Paid</span>"
+msgstr "<span>จำนวนเงินที่จ่าย</span>"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "<span>Balance</span>"
+msgstr "<span>สมดุล</span>"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "<span>Invoice Date</span>"
+msgstr "<span>วันที่แจ้งหนี้</span>"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "<span>Invoice Number</span>"
+msgstr "<span>เลขใบสั่งของ</span>"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "<span>Item</span>"
+msgstr "<span>สิ่งของ</span>"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "<span>Original Amount </span>"
+msgstr "<span>จำนวนเงินเดิม</span>"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Address :"
+msgstr "ที่อยู่:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Branch No :"
+msgstr "หมายเลขสาขา:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Company Copy"
+msgstr "สำเนา บริษัท"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Company Original"
+msgstr "บริษัท ดั้งเดิม"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Customer :"
+msgstr "ลูกค้า:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Date :"
+msgstr "วันที่:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Memo :"
+msgstr "ข้อควรจำ:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Payment Method :"
+msgstr "วิธีการชำระเงิน:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Payment Receipt"
+msgstr "ใบเสร็จการชำระเงิน"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Place Of Issue :"
+msgstr "สถานที่ออก:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Signature of Accounting"
+msgstr "ลายเซ็นของการบัญชี"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Signature of Manager"
+msgstr "ลายมือชื่อผู้จัดการ"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Signature of Receiver"
+msgstr "ลายเซ็นของผู้รับ"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Tax Number :"
+msgstr "หมายเลขภาษี :"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Vendor :"
+msgstr "ผู้ขาย:"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Purchase voucher(PV)"
+msgstr "ใบสำคัญจ่าย (PV)"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Payment Voucher(PV)"
+msgstr "ใบสำคัญรับ (PV)"
+
+#. module: thaidev_payment
+#: model_terms:ir.ui.view,arch_db:thaidev_payment.report_payment_receipt
+msgid "Receive Voucher(RV)"
+msgstr "รับคูปอง (RV)"
+
+#. module: thaidev_payment
+#: model:ir.actions.report,name:thaidev_payment.wecardealor_action_report_payment_receipt
+msgid "WeCarDealor RV / PV"
+msgstr "WeCarDealor RV / PV"

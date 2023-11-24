@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--WIZARD FORMAT-->
+    <record id="view_dev_export_delivery_order_form" model="ir.ui.view">
+        <field name="name">view.dev.export.delivery.order.form</field>
+        <field name="model">dev.export.delivery.order</field>
+        <field name="arch" type="xml">
+         <form string="Export Delivery Order" version="7.0">
+            <separator for='name' string='Are sure to export Delivery Order ?'/>
+            <footer>
+        		<button string="Export" name="export_delivery_order" type="object" class="oe_highlight"/> or
+                <button string="Cancel" class="oe_link" special="cancel" />
+            </footer>
+         </form>
+       </field>
+    </record>
+    
+	<act_window id="export_delivery_order"
+                name="Export Delivery Order"
+                res_model="dev.export.delivery.order" 
+                binding_model="stock.picking"
+                view_mode="form"
+                target="new"
+        />
+</odoo>

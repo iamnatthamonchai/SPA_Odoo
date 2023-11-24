@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <data>
+            <report
+                  id="new_account_invoice_tax_report"
+                  model="account.move"
+                  string="Invoice Tax Report"
+                  report_type="qweb-pdf"
+                  name="invoice_tax_report.report_invoice_tax"
+                  file="invoice_tax_report.report_invoice_tax"
+                  paperformat="invoice_tax_report.paperformat_invoice_tax_report"
+            />
+
+            <report
+                  id="new_account_invoice_tax_report_continue"
+                  model="account.move"
+                  string="Invoice Tax Report Continue"
+                  report_type="qweb-pdf"
+                  name="invoice_tax_report.report_invoice_tax_continue"
+                  file="invoice_tax_report.report_invoice_tax_continue"
+                  paperformat="invoice_tax_report.paperformat_invoice_tax_report"
+            />
+      </data>
+</odoo>

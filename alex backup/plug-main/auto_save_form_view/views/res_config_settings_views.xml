@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.base</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position="after">
+                <div id="auto_save">
+                    <h2>Auto Save Form View</h2>
+                    <div class="row mt16 o_settings_container" name="auto_save_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="auto_save_details_settings">
+                            <div class="o_setting_left_pane">
+                                <field name="auto_save_new_form" class="font-weight-bold"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="auto_save_new_form"/>
+                                <div class="text-muted">
+                                    If you select this option. When you create a new one on form view.<br />
+                                    It will be saved automatically. Notice, It might affect the sequence number.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" id="auto_save_details_settings">
+                            <div class="o_setting_left_pane">
+                                <field name="auto_save_any_state" class="font-weight-bold"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="auto_save_any_state"/>
+                                <div class="text-muted">
+                                    If you select this option. The form will be saved with any state.<br />
+                                    Otherwise, the form is draft state will be saved.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             </xpath>
+        </field>
+    </record>
+
+</odoo>

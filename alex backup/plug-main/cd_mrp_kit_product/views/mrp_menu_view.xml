@@ -1,0 +1,55 @@
+<odoo>
+
+
+        <menuitem id="mrp.menu_mrp_root"
+        name="Manufacturing"
+        groups="cd_mrp_kit_product.mrp_allow_access"
+        web_icon="mrp,static/description/icon.svg"
+        sequence="145">
+
+        <menuitem id="mrp.menu_mrp_manufacturing"
+            name="Operations"
+            sequence="10"/>
+
+        <menuitem id="mrp.mrp_planning_menu_root"
+            name="Planning"
+            sequence="15"/>
+
+        <menuitem id="mrp.menu_mrp_bom"
+            name="Products"
+            sequence="20"/>
+
+        <menuitem id="mrp.menu_mrp_reporting"
+              name="Reporting"
+              sequence="25"/>
+
+        <menuitem id="mrp.menu_mrp_configuration"
+            name="Configuration"
+            groups="mrp.group_mrp_manager"
+            sequence="100"/>
+
+    </menuitem>
+
+        <record id="mrp.mrp_bom_form_action" model="ir.actions.act_window">
+            <field name="name">Bundle Products</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.bom</field>
+            <field name="domain">[]</field> <!-- force empty -->
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="search_view_id" ref="mrp.view_mrp_bom_filter"/>
+            <field name="context">{'default_company_id': allowed_company_ids[0]}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                No Bundle Product found. Let's create one!
+              </p><p>
+                Bundle Material allow you to define the list of required raw
+                materials used to make a finished product; through a manufacturing
+                order or a pack of products.
+              </p>
+            </field>
+        </record>
+    <menuitem id="mrp.menu_mrp_bom_form_action"
+            action="mrp.mrp_bom_form_action"
+            parent="stock.menu_stock_inventory_control"
+            sequence="13"/>
+</odoo>

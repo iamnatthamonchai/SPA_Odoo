@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_move_wecardealor_form">
+        <field name="name">account.move.wecardealor.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="ref" position="after">
+                    <field name="internat_note" />           
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_move_wecardealor_form">
+        <field name="name">res.company.wecardealor.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+             <xpath expr="//page[1]" position="after">
+                <page string="We Car Dealor Colours">
+                    <group>
+                        <label for="invoice_company_colour" string="Company Colour" />
+                        <field name="invoice_company_colour" widget="color" class="mb-4"  />   
+                    </group>
+
+                    <group>
+                        <label for="invoice_customer_colour" string="Customer Colour" /> 
+                        <field name="invoice_customer_colour" widget="color" class="mb-4" /> 
+                    </group>
+
+                    <group>
+                        <label for="invoice_accounts_colour" string="Accounts Colour" />
+                        <field name="invoice_accounts_colour" widget="color" class="mb-4" /> 
+                    </group>
+                </page>      
+            </xpath>
+        </field>
+    </record>
+</odoo>

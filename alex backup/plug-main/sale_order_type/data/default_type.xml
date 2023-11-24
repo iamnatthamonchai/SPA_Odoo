@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="normal_sale_type0" model="sale.order.type">
+        <field name="name">OEM</field>
+    </record>
+    <record id="normal_sale_type1" model="sale.order.type">
+        <field name="name">AUS Agent</field>
+    </record>
+    <record id="normal_sale_type2" model="sale.order.type">
+        <field name="name">RB Xpress</field>
+    </record>
+    <record id="normal_sale_type3" model="sale.order.type">
+        <field name="name">TH Local</field>
+    </record>
+    <record id="normal_sale_type4" model="sale.order.type">
+        <field name="name">After Marke</field>
+    </record>
+</odoo>

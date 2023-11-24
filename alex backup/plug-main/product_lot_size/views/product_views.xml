@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+      <!-- Inherited View of Product Form -->
+      <record id="view_template_form_inherited_product_lot_size" model="ir.ui.view">
+        <field name="name">view.template.inherited.product.lot.size</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='route_from_categ_ids']" position="after">
+            <field name="product_lot_size"/>
+          </xpath>
+        </field>
+      </record>
+      <!-- MRP.PRODUCTION -->
+      <record id="mrp_production_view_form_inherit" model="ir.ui.view">
+          <field name="name">mrp.production.view.form.inherit</field>
+          <field name="model">mrp.production</field>
+          <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+          <field name="arch" type="xml">
+              <button name="action_cancel" position="before">
+                  <button name="action_draft" string="Set to Draft" type="object" states="cancel"/>
+              </button>
+              <xpath expr="//field[@name='user_id']" position="after">
+                <field name="so_reference"/>
+                <field name="so_line_sequence" invisible="1"/>
+                <field name="sale_line_id" invisible="1"/>
+              </xpath>
+          </field>
+      </record>
+      <!-- Workorder Kanban view-->
+      <record model="ir.ui.view" id="workcenter_line_kanban_inherit">
+        <field name="name">mrp.production.work.order.kanban.inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.workcenter_line_kanban"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='production_id']" position="before">
+            <field name="priority"/>
+          </xpath>
+          <xpath expr='//strong[hasclass("o_primary")]/span[1]' position='before'>
+            <field name="priority" widget="priority"/>
+          </xpath>  
+        </field>
+      </record>
+
+      <record id="mrp_production_workorder_tree_editable_inherit" model="ir.ui.view">
+        <field name="name">mrp.production.work.order.tree.inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="priority" widget="priority"/>
+            </field>
+        </field>
+      </record>
+
+      <!-- Workcenter Kanban view-->
+      <record model="ir.ui.view" id="mrp_workcenter_kanban_inherit">
+        <field name="name">mrp.workcenter.kanban.inherit</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_kanban"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='oee_target']" position="after">
+            <field name="priority"/>
+          </xpath>
+          <xpath expr='//span[hasclass("o_primary")]/field[@name="name"]' position='before'>
+            <field name="priority" widget="priority"/>
+          </xpath>  
+
+        </field>
+      </record>
+    </data>
+</odoo>

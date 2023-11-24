@@ -1,0 +1,20 @@
+@font-face { 
+    font-family: SarabunBold;
+    src: url('/thaidev_invoice1/static/src/fonts/Sarabun-Bold.ttf') format('truetype');}
+
+@font-face { 
+    font-family: SarabunMedium;
+    src: url('/thaidev_invoice1/static/src/fonts/Sarabun-Medium.ttf') format('truetype');}
+
+@font-face { 
+    font-family: SarabunMediumItalic;
+    src: url('/thaidev_invoice1/static/src/fonts/Sarabun-MediumItalic.ttf') format('truetype');}
+
+@font-face { 
+    font-family: SarabunRegular;
+    src: url('/thaidev_invoice1/static/src/fonts/Sarabun-Regular.ttf') format('truetype');}
+    
+  .SarabunBold { font-family: SarabunBold;  }
+  .SarabunMedium { font-family: SarabunMedium;  }
+  .SarabunMediumItalic { font-family: SarabunMediumItalic;  }
+  .SarabunRegular { font-family: SarabunRegular;  }
